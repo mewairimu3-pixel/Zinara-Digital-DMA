@@ -162,18 +162,23 @@
 
 .animation-delay-1200 {
     animation-delay: 1.2s;
-}
 
-.animation-delay-1400 {
-    animation-delay: 1.4s;
-}
+        .animation-delay-1400 {
+            animation-delay: 1.4s;
+        }
 
-/* Hover Enhancements */
-.service-card, .outcome-card, .pricing-card {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 40px;
+            background: white;
+        }
 
-.service-card:hover {
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 48, 63, 0.15);
 }
@@ -2680,28 +2685,30 @@ button:focus, a:focus, input:focus, textarea:focus {
             <h2 class="text-4xl md:text-5xl font-bold text-deep-teal mb-6 mt-6">What You'll Achieve in <span class="text-orange">90 Days</span></h2>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">No fluff, just measurable growth that compounds.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-gradient-to-br from-sea-blue to-deep-teal p-8 rounded-2xl shadow-xl text-white">
-                <div class="text-4xl font-bold mb-2">2×</div>
-                <h3 class="text-2xl font-bold mb-3">Increase in qualified leads</h3>
-                <p class="text-gray-200">Double your pipeline with targeted campaigns that attract your ideal customers</p>
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+            <div class="text-center">
+                <div class="text-4xl font-bold mb-2 text-orange">2×</div>
+                <h3 class="text-xl font-bold text-deep-teal mb-3">Increase in qualified leads</h3>
+                <p class="text-gray-600 text-sm">Double your pipeline with targeted campaigns that attract your ideal customers</p>
             </div>
-            <div class="bg-gradient-to-br from-sea-blue to-deep-teal p-8 rounded-2xl shadow-xl text-white">
-                <div class="text-4xl font-bold mb-2">30-50%</div>
-                <h3 class="text-2xl font-bold mb-3">Uplift in conversion rate</h3>
-                <p class="text-gray-200">Turn more visitors into customers with optimized funnels and messaging</p>
+            <div class="text-center">
+                <div class="text-4xl font-bold mb-2 text-orange">30-50%</div>
+                <h3 class="text-xl font-bold text-deep-teal mb-3">Uplift in conversion rate</h3>
+                <p class="text-gray-600 text-sm">Turn more visitors into customers with optimized funnels and messaging</p>
             </div>
-            <div class="bg-gradient-to-br from-sea-blue to-deep-teal p-8 rounded-2xl shadow-xl text-white">
-                <div class="text-4xl font-bold mb-2">Predictable</div>
-                <h3 class="text-2xl font-bold mb-3">Sales funnel fueling repeat purchases</h3>
-                <p class="text-gray-200">Build a system that generates consistent revenue month after month</p>
+            <div class="text-center">
+                <div class="text-4xl font-bold mb-2 text-orange">Predictable</div>
+                <h3 class="text-xl font-bold text-deep-teal mb-3">Sales funnel fueling repeat purchases</h3>
+                <p class="text-gray-600 text-sm">Build a system that generates consistent revenue month after month</p>
             </div>
-            <div class="bg-gradient-to-br from-sea-blue to-deep-teal p-8 rounded-2xl shadow-xl text-white">
-                <div class="text-4xl font-bold mb-2">Monthly</div>
-                <h3 class="text-2xl font-bold mb-3">Growth reports showing revenue impact</h3>
-                <p class="text-gray-200">Clear data and insights that prove ROI and guide decisions</p>
+            <div class="text-center">
+                <div class="text-4xl font-bold mb-2 text-orange">Monthly</div>
+                <h3 class="text-xl font-bold text-deep-teal mb-3">Growth reports showing revenue impact</h3>
+                <p class="text-gray-600 text-sm">Clear data and insights that prove ROI and guide decisions</p>
             </div>
         </div>
+    </div>
+</section>
     </div>
 </section>
 
