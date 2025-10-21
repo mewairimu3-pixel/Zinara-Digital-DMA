@@ -2265,6 +2265,11 @@ button:focus, a:focus, input:focus, textarea:focus {
 .service-card:nth-child(6) { animation-delay: 0.6s; }
 .service-card:nth-child(7) { animation-delay: 0.7s; }
 .service-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Hide pricing content by default */
+.pricing-content {
+    display: none;
+}
     </style>
     
     <!-- Schema.org JSON-LD Structured Data for SEO & AI Search Engines -->
@@ -2739,38 +2744,6 @@ button:focus, a:focus, input:focus, textarea:focus {
     </div>
 </section>
 
-<!-- ABOUT US SECTION -->
-<section id="about" class="py-16 md:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <span class="px-4 py-2 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-semibold">ABOUT US</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-deep-teal mb-6 mt-6">"For those who refuse to stay invisible."</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                Zinara helps entrepreneurs, creators, and businesses turn visibility into growth. We engineer digital ecosystems powered by strategy, storytelling, and precision designed for those who refuse to stay invisible.
-            </p>
-            <a href="#contact" class="px-8 py-4 bg-orange text-white font-semibold rounded-lg hover:bg-opacity-90 inline-block shadow-lg">Start Now</a>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <!-- Mission -->
-            <div class="bg-gradient-to-br from-blush to-white p-8 rounded-2xl shadow-xl border-l-4 border-orange">
-                <h3 class="text-3xl font-bold text-deep-teal mb-4">Mission</h3>
-                <p class="text-gray-700 text-lg leading-relaxed">
-                    Amplify business stories through smart digital marketing that builds trust and drives growth.
-                </p>
-            </div>
-
-            <!-- Vision -->
-            <div class="bg-gradient-to-br from-sea-blue to-aqua p-8 rounded-2xl shadow-xl border-l-4 border-deep-teal text-white">
-                <h3 class="text-3xl font-bold mb-4">VISION</h3>
-                <p class="text-white text-lg leading-relaxed">
-                    Our vision is to be a leading force in digital marketing empowering brands to share their stories with authenticity, creativity, and purpose, inspiring meaningful connections that drive growth, trust, and lasting impact worldwide.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- PROCESS SECTION -->
 <section id="process" class="py-16 md:py-24 bg-gradient-to-b from-white to-blush">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2806,18 +2779,6 @@ button:focus, a:focus, input:focus, textarea:focus {
                 <p class="text-gray-500 text-xs mt-2 font-semibold">Outcome: 50-200% ROI increase</p>
             </div>
         </div>
-
-        <!-- Simple. Transparent. Results Driven. -->
-        <div class="mt-16 text-center">
-            <h3 class="text-3xl font-bold text-deep-teal mb-6">Simple. Transparent. Results Driven.</h3>
-            <p class="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">Get your tailored growth roadmap in just 7 days, built to eliminate waste and maximize your ROI.</p>
-            <div class="text-white p-12 rounded-2xl max-w-3xl mx-auto shadow-2xl" style="background-color: #00303F;">
-                <h4 class="text-2xl font-bold mb-4">Ready to Start Your Growth Journey?</h4>
-                <p class="text-lg mb-6 text-white/90">Join 50+ businesses already seeing measurable results with our proven framework.</p>
-                <a href="#contact" class="px-8 py-4 bg-orange text-white font-semibold rounded-lg hover:bg-opacity-90 inline-block shadow-lg">Get My Growth Blueprint</a>
-            </div>
-            <p class="text-sm text-gray-600 mt-4">Free strategy session · no obligation · 30 day performance satisfaction guarantee</p>
-        </div>
     </div>
 </section>
 
@@ -2832,9 +2793,14 @@ button:focus, a:focus, input:focus, textarea:focus {
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-start mb-12">
+        <div class="grid lg:grid-cols-3 gap-12 items-center">
+            <!-- Image Placeholder -->
+            <div class="lg:order-2">
+                <img src="https://via.placeholder.com/500x400?text=About+Us+Team" alt="About Us" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+            </div>
+
             <!-- Mission -->
-            <div>
+            <div class="lg:order-1">
                 <h3 class="text-3xl font-bold text-deep-teal mb-4">Mission</h3>
                 <p class="text-gray-700 text-lg leading-relaxed">
                     Amplify business stories through smart digital marketing that builds trust and drives growth.
@@ -2842,7 +2808,7 @@ button:focus, a:focus, input:focus, textarea:focus {
             </div>
 
             <!-- Vision -->
-            <div>
+            <div class="lg:order-3">
                 <h3 class="text-3xl font-bold text-deep-teal mb-4">VISION</h3>
                 <p class="text-gray-700 text-lg leading-relaxed">
                     Our vision is to be a leading force in digital marketing empowering brands to share their stories with authenticity, creativity, and purpose, inspiring meaningful connections that drive growth, trust, and lasting impact worldwide.
@@ -2850,7 +2816,7 @@ button:focus, a:focus, input:focus, textarea:focus {
             </div>
         </div>
 
-        <div class="text-center">
+        <div class="text-center mt-12">
             <a href="#services-detail" class="px-8 py-4 bg-orange text-white font-semibold rounded-lg hover:bg-opacity-90 inline-block shadow-lg">View Our Services</a>
         </div>
     </div>
@@ -3001,7 +2967,7 @@ button:focus, a:focus, input:focus, textarea:focus {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Work</h2>
-            <p class="text-xl text-gray-200 max-w-3xl mx-auto">Explore a showcase of our successful <strong>digital marketing campaigns and projects</strong>. Each initiative is a testament to our commitment to delivering exceptional results and driving business growth.</p>
+            <p class="text-xl text-gray-200 max-w-3xl mx-auto">Explore how Zinara Digital drives measurable growth through strategic, data-driven marketing. Each campaign represents a proven system that attracts, converts, and retains customers for long-term success.</p>
         </div>
 
         <!-- Project Rows -->
@@ -3019,19 +2985,23 @@ button:focus, a:focus, input:focus, textarea:focus {
                     </div>
                     <!-- Content -->
                     <div class="md:w-2/3 p-8">
-                        <h3 class="text-2xl font-bold mb-2 text-deep-teal">SEO Campaign for Tech Startup</h3>
-                        <p class="text-orange font-semibold mb-4">Increasing Online Visibility</p>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Our <strong>SEO campaign</strong> for a tech startup resulted in a significant increase in <strong>organic traffic</strong> and a boost in <strong>search engine rankings</strong>. The tailored strategy focused on relevant keywords and quality content.
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <h3 class="text-2xl font-bold text-deep-teal">SEO Campaign for Tech Startup</h3>
+                            <span class="px-3 py-1 bg-orange/10 text-orange rounded-full text-sm font-medium">SEO Campaign</span>
+                            <span class="px-3 py-1 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-medium">Technology</span>
+                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">CreativeWork</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Boosted search visibility and organic traffic through a focused SEO campaign that optimized keywords, improved technical performance, and enhanced content relevance.
                         </p>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
-                                <span>Keyword research & optimization</span>
+                                <span>Keyword optimization</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
-                                <span>Content strategy & creation</span>
+                                <span>Content strategy and creation</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
@@ -3055,19 +3025,23 @@ button:focus, a:focus, input:focus, textarea:focus {
                     </div>
                     <!-- Content -->
                     <div class="md:w-2/3 p-8">
-                        <h3 class="text-2xl font-bold mb-2 text-deep-teal">Social Media Campaign for Fashion Brand</h3>
-                        <p class="text-orange font-semibold mb-4">Enhancing Brand Engagement</p>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Our <strong>social media campaign</strong> for a fashion brand led to a rise in follower engagement and an increase in website traffic. Through captivating visuals and <strong>targeted ads</strong>, we amplified brand awareness and customer interactions.
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <h3 class="text-2xl font-bold text-deep-teal">Social Media Campaign for Fashion Brand</h3>
+                            <span class="px-3 py-1 bg-orange/10 text-orange rounded-full text-sm font-medium">Social Media Campaign</span>
+                            <span class="px-3 py-1 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-medium">Fashion</span>
+                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">Campaign</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Increased engagement, reach, and traffic through visually engaging Instagram and Facebook campaigns. Leveraged influencer collaborations and targeted paid ads to grow brand awareness.
                         </p>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
-                                <span>Instagram & Facebook marketing</span>
+                                <span>Social media management</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
-                                <span>Influencer collaborations</span>
+                                <span>Influencer partnerships</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
@@ -3091,32 +3065,32 @@ button:focus, a:focus, input:focus, textarea:focus {
                     </div>
                     <!-- Content -->
                     <div class="md:w-2/3 p-8">
-                        <h3 class="text-2xl font-bold mb-2 text-deep-teal">Content Marketing for E-Commerce Business</h3>
-                        <p class="text-orange font-semibold mb-4">Driving Conversions Through Content</p>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            Our <strong>content marketing</strong> efforts for an e-commerce business generated a boost in <strong>conversion rates and customer retention</strong>. By creating valuable and engaging content, we established a loyal customer base and increased sales.
+                        <div class="flex flex-wrap items-center gap-4 mb-4">
+                            <h3 class="text-2xl font-bold text-deep-teal">Content Marketing for E-Commerce Brand</h3>
+                            <span class="px-3 py-1 bg-orange/10 text-orange rounded-full text-sm font-medium">Content Marketing</span>
+                            <span class="px-3 py-1 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-medium">E-Commerce</span>
+                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">CreativeWork</span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Boosted conversions and customer loyalty through value rich blogs, targeted emails, and video storytelling that positioned the brand as an authority in its niche.
                         </p>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
-                                <span>Blog posts & product guides</span>
+                                <span>Blog content and product guides</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
-                                <span>Email marketing sequences</span>
+                                <span>Email marketing automation</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-orange mr-2">✓</span>
-                                <span>Video content creation</span>
+                                <span>Video marketing assets</span>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="text-center">
-            <a href="#contact" class="px-10 py-5 bg-orange text-white font-bold text-lg rounded-lg hover:bg-opacity-90 inline-block shadow-lg">Let's Create Your Success Story →</a>
         </div>
     </div>
 </section>
@@ -3133,31 +3107,39 @@ button:focus, a:focus, input:focus, textarea:focus {
 
         <div class="grid md:grid-cols-3 gap-8 mb-12">
             <!-- Starter Plan -->
-            <div class="bg-white rounded-3xl border-4 border-gray-200 p-8 hover:shadow-2xl transition-shadow">
+            <div class="bg-white rounded-3xl border-4 border-gray-200 p-8 hover:shadow-2xl transition-shadow relative">
                 <h3 class="text-2xl font-bold text-deep-teal mb-4">Starter Plan</h3>
                 <h4 class="text-lg font-semibold text-orange mb-4">Perfect for Entrepreneurs & Small Businesses</h4>
                 <p class="text-gray-600 mb-6">Designed for early-stage growth and visibility. Ideal if you're ready to build a strong digital foundation and start generating consistent leads.</p>
-                <div class="mb-8">
-                    <h5 class="font-bold text-deep-teal mb-4">Includes:</h5>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>Full digital audit & channel setup</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>Smart funnel design for lead generation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>Weekly performance insights</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>Entry-level automation to save time</span>
-                        </li>
-                    </ul>
+
+                <div class="pricing-content pricing-content-1">
+                    <div class="mb-8">
+                        <h5 class="font-bold text-deep-teal mb-4">Includes:</h5>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>Full digital audit & channel setup</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>Smart funnel design for lead generation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>Weekly performance insights</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>Entry-level automation to save time</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+                <button onclick="togglePricingContent(1)" class="text-orange font-semibold mb-6 hover:text-deep-teal transition-colors pricing-toggle-1">
+                    + Read More
+                </button>
+
                 <a href="#contact" class="block w-full text-center py-4 px-6 rounded-lg font-bold bg-orange text-white hover:bg-opacity-90 shadow-lg">Request My Starter Quote</a>
             </div>
 
@@ -3169,79 +3151,94 @@ button:focus, a:focus, input:focus, textarea:focus {
                 <h3 class="text-2xl font-bold mb-4 mt-4">Growth Plan</h3>
                 <h4 class="text-lg font-semibold text-white/90 mb-4">For Businesses Ready to Scale</h4>
                 <p class="text-white/90 mb-6">Built for brands ready to expand reach, optimize ROI, and accelerate conversions with data-driven campaigns.</p>
-                <div class="mb-8">
-                    <h5 class="font-bold mb-4">Includes:</h5>
-                    <ul class="space-y-3 text-white/90">
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Everything in Starter</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Ongoing ad + funnel management</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>A/B testing and continuous optimization</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Up to 3× more qualified lead flow</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="mr-2">•</span>
-                            <span>Priority performance support</span>
-                        </li>
-                    </ul>
+
+                <div class="pricing-content pricing-content-2">
+                    <div class="mb-8">
+                        <h5 class="font-bold mb-4">Includes:</h5>
+                        <ul class="space-y-3 text-white/90">
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Everything in Starter</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Ongoing ad + funnel management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>A/B testing and continuous optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Up to 3× more qualified lead flow</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2">•</span>
+                                <span>Priority performance support</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+                <button onclick="togglePricingContent(2)" class="text-white font-semibold mb-6 hover:text-gray-200 transition-colors pricing-toggle-2">
+                    + Read More
+                </button>
+
                 <a href="#contact" class="block w-full text-center py-4 px-6 rounded-lg font-bold bg-white text-orange hover:bg-gray-100 shadow-lg">Let's Discuss My Growth Plan</a>
             </div>
 
             <!-- Scale Plan -->
-            <div class="bg-white rounded-3xl border-4 border-gray-200 p-8 hover:shadow-2xl transition-shadow">
+            <div class="bg-white rounded-3xl border-4 border-gray-200 p-8 hover:shadow-2xl transition-shadow relative">
                 <h3 class="text-2xl font-bold text-deep-teal mb-4">Scale Plan</h3>
                 <h4 class="text-lg font-semibold text-orange mb-4">Tailored for Established Brands</h4>
                 <p class="text-gray-600 mb-6">Enterprise-level support for teams seeking complete marketing automation and long-term retention systems.</p>
-                <div class="mb-8">
-                    <h5 class="font-bold text-deep-teal mb-4">Includes:</h5>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>Everything in Growth</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>Advanced retention automation</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>Dedicated account strategist</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-orange mr-2">•</span>
-                            <span>White-glove execution & reporting</span>
-                        </li>
-                    </ul>
+
+                <div class="pricing-content pricing-content-3">
+                    <div class="mb-8">
+                        <h5 class="font-bold text-deep-teal mb-4">Includes:</h5>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>Everything in Growth</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>Advanced retention automation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>Dedicated account strategist</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange mr-2">•</span>
+                                <span>White-glove execution & reporting</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+                <button onclick="togglePricingContent(3)" class="text-orange font-semibold mb-6 hover:text-deep-teal transition-colors pricing-toggle-3">
+                    + Read More
+                </button>
+
                 <a href="#contact" class="block w-full text-center py-4 px-6 rounded-lg font-bold bg-orange text-white hover:bg-opacity-90 shadow-lg">Get My Custom Plan</a>
             </div>
         </div>
 
         <!-- All Plans Include -->
-        <div class="bg-blush p-8 rounded-2xl mb-12">
-            <h3 class="text-2xl font-bold text-deep-teal mb-6 text-center">All Plans Include</h3>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="text-center">
-                    <div class="text-4xl mb-2">📊</div>
-                    <p class="font-semibold text-deep-teal">Transparent reporting & real-time dashboards</p>
+        <div class="text-center mb-12">
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div>
+                    <h4 class="text-xl font-bold text-deep-teal mb-2">Transparent reporting & real-time dashboards</h4>
+                    <p class="text-gray-600">Track your progress with detailed analytics and performance metrics</p>
                 </div>
-                <div class="text-center">
-                    <div class="text-4xl mb-2">🔓</div>
-                    <p class="font-semibold text-deep-teal">No long-term lock-ins or hidden fees</p>
+                <div>
+                    <h4 class="text-xl font-bold text-deep-teal mb-2">No long-term lock-ins or hidden fees</h4>
+                    <p class="text-gray-600">Flexible terms with no surprise charges or contractual obligations</p>
                 </div>
-                <div class="text-center">
-                    <div class="text-4xl mb-2">🛡️</div>
-                    <p class="font-semibold text-deep-teal">30-day performance satisfaction guarantee</p>
+                <div>
+                    <h4 class="text-xl font-bold text-deep-teal mb-2">30-day performance satisfaction guarantee</h4>
+                    <p class="text-gray-600">Results-backed guarantee ensuring measurable improvement</p>
                 </div>
             </div>
         </div>
@@ -3553,6 +3550,15 @@ button:focus, a:focus, input:focus, textarea:focus {
     </div>
 </section>
 
+<!-- FINAL CTA BEFORE FOOTER -->
+<section class="py-16 md:py-24 bg-gradient-to-br from-deep-teal to-sea-blue text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Create Your Success Story</h2>
+        <p class="text-xl mb-8 text-white/90">Ready to transform your digital presence and drive measurable growth? Let's build your custom strategy today.</p>
+        <a href="#contact" class="px-10 py-5 bg-orange text-white font-bold text-lg rounded-lg hover:bg-opacity-90 inline-block shadow-lg">Get Started Now</a>
+    </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="bg-deep-teal text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -3667,6 +3673,20 @@ function toggleFAQ(index) {
     const icon = document.getElementById('faq-icon-' + index);
     content.classList.toggle('hidden');
     icon.innerHTML = content.classList.contains('hidden') ? '▼' : '▲';
+}
+
+// Pricing content toggle
+function togglePricingContent(planNumber) {
+    const content = document.querySelector('.pricing-content-' + planNumber);
+    const button = document.querySelector('.pricing-toggle-' + planNumber);
+
+    if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';
+        button.textContent = '- Read Less';
+    } else {
+        content.style.display = 'none';
+        button.textContent = '+ Read More';
+    }
 }
 </script>
 
