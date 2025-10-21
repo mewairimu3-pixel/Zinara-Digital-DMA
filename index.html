@@ -236,46 +236,119 @@
 </nav>
 
 <!-- HERO SECTION -->
-<section id="home" class="pt-32 pb-20 gradient-bg text-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div class="text-center space-y-12">
-            <div class="space-y-6">
-                <span class="px-6 py-3 bg-orange/20 rounded-full text-sm font-semibold border border-orange/30 inline-block">🚀 Trusted by 50+ Global Brands</span>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl mx-auto">
-                    Double Your Leads in 90 Days
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-                    Proven digital marketing systems that deliver measurable results for businesses of all sizes.
-                </p>
-            </div>
+<section id="home" class="pt-32 pb-20 gradient-bg text-white relative overflow-hidden">
+    <!-- Background Image Placeholder -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('/images/hero-background.jpg');"></div>
 
-            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div class="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                    <svg class="text-aqua flex-shrink-0" width="32" height="32" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span class="text-lg font-medium">Attract Quality Leads</span>
-                </div>
-                <div class="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                    <svg class="text-aqua flex-shrink-0" width="32" height="32" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span class="text-lg font-medium">Convert More Sales</span>
-                </div>
-                <div class="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                    <svg class="text-aqua flex-shrink-0" width="32" height="32" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span class="text-lg font-medium">Retain Customers</span>
-                </div>
-            </div>
+    <!-- Overlay for better text readability -->
+    <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/30"></div>
 
-            <div class="space-y-6">
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="px-10 py-5 bg-orange text-white font-bold text-lg rounded-xl hover:bg-opacity-90 transition-all shadow-xl transform hover:scale-105">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Column: Content -->
+            <div class="space-y-8">
+                <div class="space-y-6">
+                    <span class="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium border border-white/20">
+                        🚀 Trusted by 50+ Global Brands
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Double your leads in 90 days with Zinara Digital, a trusted digital marketing agency specializing in reliable growth systems.
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-200 leading-relaxed">
+                        We help businesses of all sizes attract, convert, and retain their ideal clients through proven marketing frameworks that deliver measurable results.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-aqua rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <p class="text-lg text-gray-200 leading-relaxed">
+                            Consistently attract high-quality leads through proven digital funnels
+                        </p>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-aqua rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <p class="text-lg text-gray-200 leading-relaxed">
+                            Improve conversion rates and ROI through focused testing
+                        </p>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-aqua rounded-full flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <p class="text-lg text-gray-200 leading-relaxed">
+                            Retain customers with automated nurture journeys
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-orange text-white font-bold text-lg rounded-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         Start My Growth Plan
                     </a>
-                    <a href="#process" class="px-10 py-5 bg-white/10 text-white font-bold text-lg rounded-xl hover:bg-white/20 transition-all border-2 border-white/30 backdrop-blur-sm">
+                    <a href="#process" class="px-8 py-4 bg-white/10 text-white font-bold text-lg rounded-lg hover:bg-white/20 transition-all duration-300 border-2 border-white/30 backdrop-blur-sm">
                         See How It Works
                     </a>
                 </div>
-                <p class="text-base text-gray-300 max-w-md mx-auto">
-                    Free strategy session • No obligation • 30-day satisfaction guarantee
-                </p>
+
+                <div class="flex items-center space-x-6 pt-4">
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm text-gray-300">Free Strategy Session</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm text-gray-300">30-Day Guarantee</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm text-gray-300">No Obligation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Visual Element -->
+            <div class="relative">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">2×</div>
+                            <div class="text-sm text-gray-300">Lead Increase</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">300%</div>
+                            <div class="text-sm text-gray-300">ROI Growth</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">50+</div>
+                            <div class="text-sm text-gray-300">Happy Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">98%</div>
+                            <div class="text-sm text-gray-300">Client Retention</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating elements for visual interest -->
+                <div class="absolute -top-4 -right-4 w-16 h-16 bg-orange/20 rounded-full blur-xl"></div>
+                <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-aqua/20 rounded-full blur-xl"></div>
             </div>
         </div>
     </div>
@@ -347,11 +420,6 @@
                 <h3 class="text-2xl font-bold mb-3">Growth reports showing revenue impact</h3>
                 <p class="text-gray-200">Clear data and insights that prove ROI and guide decisions</p>
             </div>
-        </div>
-        <div class="bg-gradient-to-r from-blush to-white p-12 rounded-2xl text-center border-2 border-orange/20">
-            <h3 class="text-3xl font-bold text-deep-teal mb-4">From Invisible to Unstoppable</h3>
-            <p class="text-xl text-gray-700 mb-8">Transform your digital presence into a revenue-generating machine with our proven framework.</p>
-            <a href="#contact" class="px-8 py-4 bg-orange text-white font-semibold rounded-lg hover:bg-opacity-90 inline-block shadow-lg">Show Me the Results →</a>
         </div>
     </div>
 </section>
