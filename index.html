@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +38,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Structured Data for AI & SEO -->
     <script type="application/ld+json">
@@ -100,12 +101,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'deep-teal': '#00303F',
-                        'blush': '#EDDFE0',
-                        'sea-blue': '#006B7D',
-                        'orange': '#FF6B35',
-                        'aqua': '#03A6A1',
-                    },
+                        'deep-navy': '#00043F',
+                        'gold': '#FFD200',
+                        'charcoal': '#2B2B2B',
+                        'light-gray': '#F7F8FA',
+                    }
                 }
             }
         }
@@ -119,8 +119,8 @@
 }
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: #00303F;
+    font-family: 'Poppins', sans-serif;
+    color: #00043F;
     line-height: 1.6;
     font-size: 17px;
     overflow-x: hidden;
@@ -166,12 +166,12 @@ html {
 .logo {
     font-size: 26px;
     font-weight: 800;
-    color: #00303F;
+    color: #00043F;
     letter-spacing: -0.5px;
 }
 
 .logo span {
-    color: #00303F;
+    color: #00043F;
 }
 
 .nav {
@@ -180,7 +180,7 @@ html {
 }
 
 .nav a {
-    color: #00303F;
+    color: #00043F;
     text-decoration: none;
     font-weight: 500;
     font-size: 15px;
@@ -188,31 +188,31 @@ html {
 }
 
 .nav a:hover {
-    color: #00303F;
+    color: #00043F;
 }
 
 .cta-btn, .header-cta {
-    background: #FF6B35;
-    color: white;
+    background: #FFD200;
+    color: #00043F;
     padding: 12px 28px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 210, 0, 0.3);
 }
 
 .cta-btn:hover, .header-cta:hover {
-    background: #03A6A1;
+    background: #FFD200;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(3, 166, 161, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 210, 0, 0.4);
 }
 
 /* Hero Section */
 .hero {
     padding: 180px 40px 100px;
-    background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 50%, #F0F9FF 100%);
+    background: linear-gradient(135deg, #F7F8FA 0%, #FFFFFF 50%, #F0F9FF 100%);
     position: relative;
     overflow: hidden;
 }
@@ -272,7 +272,7 @@ html {
 
 .hero-bullets li {
     font-size: 18px;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 16px;
     padding-left: 32px;
     position: relative;
@@ -283,7 +283,7 @@ html {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #03A6A1;
+    color: #FFD200;
     font-weight: bold;
     font-size: 20px;
 }
@@ -296,41 +296,41 @@ html {
 }
 
 .btn-primary {
-    background: #FF6B35;
-    color: white;
+    background: #FFD200;
+    color: #00043F;
     padding: 18px 40px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
     font-size: 16px;
     transition: all 0.3s;
-    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.35);
+    box-shadow: 0 8px 25px rgba(255, 210, 0, 0.35);
     display: inline-block;
     border: none;
     cursor: pointer;
 }
 
 .btn-primary:hover {
-    background: #03A6A1;
+    background: #FFD200;
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(3, 166, 161, 0.4);
+    box-shadow: 0 12px 35px rgba(255, 210, 0, 0.4);
 }
 
 .btn-secondary {
     background: transparent;
-    color: #00303F;
+    color: #00043F;
     padding: 18px 40px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
-    border: 2px solid #00303F;
+    border: 2px solid #00043F;
     transition: all 0.3s;
     display: inline-block;
 }
 
 .btn-secondary:hover {
-    background: #00303F;
+    background: #00043F;
     color: white;
 }
 
@@ -395,14 +395,14 @@ html {
 .stat-number {
     font-size: 48px;
     font-weight: 900;
-    color: #00303F;
+    color: #00043F;
     line-height: 1;
     margin-bottom: 8px;
 }
 
 .stat-label {
     font-size: 16px;
-    color: #7A7A7A;
+    color: #2B2B2B;
     font-weight: 500;
 }
 
@@ -513,7 +513,7 @@ html {
 /* Transformation Section */
 .transformation-section {
     padding: 100px 40px;
-    background: #F9FAFB;
+    background: #F7F8FA;
 }
 
 .transformation-container, .process-container, .proof-container, 
@@ -524,7 +524,7 @@ html {
 
 .section-label {
     font-size: 14px;
-    color: #03A6A1;
+    color: #FFD200;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
@@ -548,7 +548,7 @@ html {
 }
 
 .outcome-card:hover {
-    border-color: #00303F;
+    border-color: #FFD200;
     transform: translateY(-5px);
     box-shadow: 0 20px 60px rgba(0, 48, 63, 0.12);
 }
@@ -556,7 +556,7 @@ html {
 .outcome-number {
     font-size: 56px;
     font-weight: 900;
-    color: #00303F;
+    color: #00043F;
     line-height: 1;
     margin-bottom: 16px;
 }
@@ -564,13 +564,13 @@ html {
 .outcome-title {
     font-size: 24px;
     font-weight: 700;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 12px;
 }
 
 .outcome-description {
     font-size: 16px;
-    color: #7A7A7A;
+    color: #2B2B2B;
     line-height: 1.6;
 }
 
@@ -581,25 +581,20 @@ html {
 
 .transformation-tagline {
     font-size: 18px;
-    color: #00303F;
+    color: #00043F;
     font-weight: 600;
     margin-bottom: 30px;
 }
 
 /* Services Section */
 .services-section {
-    background: linear-gradient(135deg, #f9f9f9 0%, #efefef 100%);
+    background: linear-gradient(135deg, #F7F8FA 0%, #F0F0F0 100%);
     padding: 80px 20px;
     position: relative;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
 .section-subtitle {
-    color: #03A6A1;
+    color: #FFD200;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 2px;
@@ -610,7 +605,7 @@ html {
 .section-title {
     font-size: 36px;
     font-weight: 700;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 20px;
 }
 
@@ -656,7 +651,7 @@ html {
 .service-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #00303F 0%, #03A6A1 100%);
+    background: linear-gradient(135deg, #00043F 0%, #FFD200 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -670,21 +665,21 @@ html {
 .service-title {
     font-size: 26px;
     font-weight: 600;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 15px;
     line-height: 1.3;
 }
 
 .service-tagline {
     font-style: italic;
-    color: #006B7D;
+    color: #2B2B2B;
     font-size: 15px;
     margin-bottom: 15px;
     font-weight: 400;
 }
 
 .service-description {
-    color: #666;
+    color: #2B2B2B;
     font-size: 16px;
     margin-bottom: 15px;
     line-height: 1.6;
@@ -701,26 +696,26 @@ html {
 }
 
 .category-tag {
-    background: rgba(3, 166, 161, 0.1);
-    color: #006B7D;
+    background: rgba(255, 210, 0, 0.1);
+    color: #00043F;
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 400;
-    border: 1px solid rgba(3, 166, 161, 0.2);
+    border: 1px solid rgba(255, 210, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .category-tag:hover {
-    background: #03A6A1;
-    color: white;
+    background: #FFD200;
+    color: #00043F;
     transform: scale(1.05);
 }
 
 .expand-btn {
     background: none;
     border: none;
-    color: #00303F;
+    color: #00043F;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -733,7 +728,7 @@ html {
 }
 
 .expand-btn:hover {
-    color: #00303F;
+    color: #00043F;
     transform: translateX(3px);
 }
 
@@ -845,7 +840,7 @@ html {
 
 /* Approach Section */
 .approach-section {
-    background: linear-gradient(135deg, #00303F 0%, #006B7D 100%);
+    background: linear-gradient(135deg, #00043F 0%, #006B7D 100%);
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
@@ -858,7 +853,7 @@ html {
     right: -50%;
     width: 200%;
     height: 100%;
-    background: radial-gradient(circle, rgba(0, 48, 63, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 210, 0, 0.1) 0%, transparent 70%);
     z-index: 0;
 }
 
@@ -913,7 +908,7 @@ html {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #03A6A1;
+    color: #FFD200;
 }
 
 .mission-card p, .vision-card p {
@@ -952,7 +947,7 @@ html {
 .step-number {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, #00303F 0%, #03A6A1 100%);
+    background: linear-gradient(135deg, #00043F 0%, #FFD200 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -970,7 +965,7 @@ html {
     transform: translateX(-50%);
     width: 3px;
     height: 60px;
-    background: linear-gradient(180deg, #03A6A1 0%, #00303F 100%);
+    background: linear-gradient(180deg, #FFD200 0%, #00043F 100%);
 }
 
 .process-step:last-child .step-connector {
@@ -978,22 +973,22 @@ html {
 }
 
 .step-content {
-    background: #F9FAFB;
+    background: #F7F8FA;
     border-radius: 20px;
     padding: 40px;
-    border-left: 4px solid #00303F;
+    border-left: 4px solid #00043F;
 }
 
 .step-title {
     font-size: 28px;
     font-weight: 700;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 12px;
 }
 
 .step-timeline {
     font-size: 14px;
-    color: #00303F;
+    color: #00043F;
     font-weight: 600;
     margin-bottom: 16px;
     text-transform: uppercase;
@@ -1002,7 +997,7 @@ html {
 
 .step-description {
     font-size: 16px;
-    color: #7A7A7A;
+    color: #2B2B2B;
     line-height: 1.7;
     margin-bottom: 20px;
 }
@@ -1013,7 +1008,7 @@ html {
 
 .step-features li {
     font-size: 15px;
-    color: #00303F;
+    color: #2B2B2B;
     margin-bottom: 10px;
     padding-left: 28px;
     position: relative;
@@ -1068,7 +1063,7 @@ html {
 /* Proof/Case Studies Section */
 .proof-section {
     padding: 100px 40px;
-    background: #F9FAFB;
+    background: #F7F8FA;
 }
 
 .proof-container {
@@ -1114,7 +1109,7 @@ html {
 
 .case-client {
     font-size: 14px;
-    color: #00303F;
+    color: #00043F;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1124,20 +1119,20 @@ html {
 .case-title {
     font-size: 22px;
     font-weight: 700;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 16px;
     line-height: 1.3;
 }
 
 .case-challenge {
     font-size: 14px;
-    color: #7A7A7A;
+    color: #2B2B2B;
     margin-bottom: 20px;
     line-height: 1.6;
 }
 
 .case-results {
-    background: #F9FAFB;
+    background: #F7F8FA;
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
@@ -1196,7 +1191,7 @@ html {
 }
 
 .testimonial-card {
-    background: #F9FAFB;
+    background: #F7F8FA;
     border-radius: 16px;
     padding: 35px;
     position: relative;
@@ -1204,7 +1199,7 @@ html {
 
 .quote-icon {
     font-size: 48px;
-    color: #03A6A1;
+    color: #FFD200;
     opacity: 0.2;
     position: absolute;
     top: 20px;
@@ -1213,7 +1208,7 @@ html {
 
 .testimonial-text {
     font-size: 15px;
-    color: #00303F;
+    color: #00043F;
     line-height: 1.7;
     margin-bottom: 25px;
     position: relative;
@@ -1518,7 +1513,7 @@ html {
 /* Pricing Section */
 .pricing-section {
     padding: 100px 40px;
-    background: #F9FAFB;
+    background: #F7F8FA;
 }
 
 .pricing-grid {
@@ -1544,7 +1539,7 @@ html {
 }
 
 .pricing-card.featured {
-    border-color: #00303F;
+    border-color: #00043F;
     transform: scale(1.05);
 }
 
@@ -1554,7 +1549,7 @@ html {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: #00303F;
+    background: #00043F;
     color: white;
     padding: 8px 24px;
     border-radius: 50px;
@@ -1565,7 +1560,7 @@ html {
 
 .pricing-tier {
     font-size: 14px;
-    color: #03A6A1;
+    color: #FFD200;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -1575,13 +1570,13 @@ html {
 .pricing-title {
     font-size: 28px;
     font-weight: 800;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 12px;
 }
 
 .pricing-description {
     font-size: 15px;
-    color: #7A7A7A;
+    color: #2B2B2B;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -1593,13 +1588,13 @@ html {
 .price-amount {
     font-size: 48px;
     font-weight: 900;
-    color: #00303F;
+    color: #00043F;
     line-height: 1;
 }
 
 .price-period {
     font-size: 16px;
-    color: #7A7A7A;
+    color: #2B2B2B;
     font-weight: 500;
 }
 
@@ -1610,7 +1605,7 @@ html {
 
 .pricing-features li {
     font-size: 15px;
-    color: #00303F;
+    color: #00043F;
     margin-bottom: 12px;
     padding-left: 8px;
 }
@@ -1824,7 +1819,7 @@ html {
 }
 
 .footer-col ul li a:hover {
-    color: #03A6A1;
+    color: #FFD200;
 }
 
 .footer-bottom {
