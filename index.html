@@ -2885,36 +2885,54 @@ button:focus, a:focus, input:focus, textarea:focus {
     <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-orange/20 to-transparent rounded-full blur-2xl"></div>
     <div class="absolute top-1/4 right-1/3 w-64 h-64 bg-gradient-to-l from-sea-blue/10 to-transparent rounded-full blur-3xl"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16">
+        <div class="text-center mb-12">
             <span class="px-4 py-2 bg-white/20 text-deep-teal rounded-full text-sm font-semibold backdrop-blur-sm">ABOUT US</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-deep-teal mb-6 mt-6">"For those who refuse to stay invisible."</h2>
-            <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-deep-teal mb-4 mt-6">"For those who refuse to stay invisible."</h2>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
                 Zinara helps entrepreneurs, creators, and businesses turn visibility into growth. We engineer digital ecosystems powered by strategy, storytelling, and precision designed for those who refuse to stay invisible.
             </p>
         </div>
 
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <!-- Left Side - Mission and Vision -->
-            <div class="space-y-12 flex flex-col items-center lg:items-start">
-                <!-- Mission -->
-                <div class="max-w-lg text-center lg:text-left">
-                    <h3 class="text-3xl font-bold text-deep-teal mb-4">Mission</h3>
+        <!-- Mission & Vision Cards -->
+        <div class="max-w-6xl mx-auto mb-12">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <!-- Mission Card -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-white/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-orange rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-deep-teal">Our Mission</h3>
+                    </div>
                     <p class="text-gray-700 text-lg leading-relaxed">
                         Amplify business stories through smart digital marketing that builds trust and drives growth.
                     </p>
                 </div>
 
-                <!-- Vision -->
-                <div class="max-w-lg text-center lg:text-left">
-                    <h3 class="text-3xl font-bold text-deep-teal mb-4">Vision</h3>
+                <!-- Vision Card -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-white/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-sea-blue rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-deep-teal">Our Vision</h3>
+                    </div>
                     <p class="text-gray-700 text-lg leading-relaxed">
                         Our vision is to be a leading force in digital marketing empowering brands to share their stories with authenticity, creativity, and purpose, inspiring meaningful connections that drive growth, trust, and lasting impact worldwide.
                     </p>
                 </div>
             </div>
 
+            <!-- Team Image -->
             <div class="flex justify-center">
-                <img src="images/zinara-team-photo.png" alt="Zinara Digital Team" class="rounded-2xl shadow-xl w-full max-w-md h-auto object-cover">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-white/20">
+                    <img src="images/zinara-team-photo.png" alt="Zinara Digital Team" class="rounded-xl shadow-lg w-full max-w-lg h-auto object-cover">
+                    <p class="text-center text-gray-600 mt-4 font-medium">Meet the Zinara Digital Team</p>
+                </div>
             </div>
         </div>
 
@@ -3077,85 +3095,82 @@ button:focus, a:focus, input:focus, textarea:focus {
 </section>
 
 <!-- OUR WORK SECTION -->
-<section id="ourwork" class="py-16 md:py-24 bg-gradient-to-br from-gray-100 via-deep-teal/5 to-sea-blue/10 relative overflow-hidden" style="background-color: #666769;">
-    <!-- Background Pattern Elements -->
-    <div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-orange/20 to-transparent rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-sea-blue/15 to-transparent rounded-full blur-2xl"></div>
-    <div class="absolute top-1/3 left-1/4 w-64 h-64 bg-gradient-to-r from-deep-teal/10 to-transparent rounded-full blur-3xl"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<section id="ourwork" class="py-16 md:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Work</h2>
-            <p class="text-xl text-gray-200 max-w-3xl mx-auto">Explore how Zinara Digital drives measurable growth through strategic, data-driven marketing. Each campaign represents a proven system that attracts, converts, and retains customers for long-term success.</p>
+            <span class="px-4 py-2 bg-orange/10 text-orange rounded-full text-sm font-semibold">OUR WORK</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-deep-teal mb-6 mt-6">Case Studies & Results</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Real campaigns, real results. See how Zinara Digital transforms businesses through strategic digital marketing.</p>
         </div>
 
-        <!-- Project Rows -->
-        <div class="max-w-6xl mx-auto space-y-12 mb-12">
+        <!-- Project Showcase -->
+        <div class="space-y-20">
             <!-- Project 1: SEO Campaign -->
-            <div class="rounded-2xl shadow-xl overflow-hidden" style="background-color: #7a7a7a;">
-                <div class="md:flex">
-                    <!-- Image -->
-                    <div class="md:w-1/3">
-                        <img src="images/seo-campaign-showcase.png" alt="SEO Campaign Showcase" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-xl">
-                    </div>
-                    <!-- Content -->
-                    <div class="md:w-2/3 p-8">
-                        <div class="flex flex-wrap items-center gap-4 mb-4">
-                            <h3 class="text-2xl font-bold text-white">SEO Campaign for Tech Startup</h3>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-orange/10 text-orange rounded-full text-sm font-medium">SEO Campaign</span>
                             <span class="px-3 py-1 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-medium">Technology</span>
-                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">CreativeWork</span>
+                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">Organic Growth</span>
                         </div>
-                        <p class="text-gray-200 leading-relaxed mb-6">
+                        <h3 class="text-3xl font-bold text-deep-teal mb-4">SEO Campaign for Tech Startup</h3>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
                             Boosted search visibility and organic traffic through a focused SEO campaign that optimized keywords, improved technical performance, and enhanced content relevance.
                         </p>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Keyword optimization</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Content strategy and creation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Technical SEO improvements</span>
-                            </li>
-                        </ul>
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-deep-teal text-lg">Key Achievements:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-orange mr-3 mt-1">•</span>
+                                    <span>Keyword optimization and technical SEO improvements</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange mr-3 mt-1">•</span>
+                                    <span>Content strategy and creation for better search rankings</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange mr-3 mt-1">•</span>
+                                    <span>40% increase in organic traffic within 3 months</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <img src="images/seo-campaign-showcase.png" alt="SEO Campaign Showcase" class="rounded-2xl shadow-xl w-full h-80 object-cover">
                 </div>
             </div>
 
             <!-- Project 2: Social Media Campaign -->
-            <div class="rounded-2xl shadow-xl overflow-hidden" style="background-color: #7a7a7a;">
-                <div class="md:flex">
-                    <!-- Image -->
-                    <div class="md:w-1/3">
-                        <img src="images/social-media-campaign-showcase.png" alt="Social Media Campaign Showcase" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-xl">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/social-media-campaign-showcase.png" alt="Social Media Campaign Showcase" class="rounded-2xl shadow-xl w-full h-80 object-cover">
+                </div>
+                <div class="space-y-4">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-orange/10 text-orange rounded-full text-sm font-medium">Social Media Campaign</span>
+                        <span class="px-3 py-1 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-medium">Fashion</span>
+                        <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">Brand Awareness</span>
                     </div>
-                    <!-- Content -->
-                    <div class="md:w-2/3 p-8">
-                        <div class="flex flex-wrap items-center gap-4 mb-4">
-                            <h3 class="text-2xl font-bold text-white">Social Media Campaign for Fashion Brand</h3>
-                            <span class="px-3 py-1 bg-orange/10 text-orange rounded-full text-sm font-medium">Social Media Campaign</span>
-                            <span class="px-3 py-1 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-medium">Fashion</span>
-                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">Campaign</span>
-                        </div>
-                        <p class="text-gray-200 leading-relaxed mb-6">
-                            Increased engagement, reach, and traffic through visually engaging Instagram and Facebook campaigns. Leveraged influencer collaborations and targeted paid ads to grow brand awareness.
-                        </p>
-                        <ul class="space-y-2 text-gray-300">
+                    <h3 class="text-3xl font-bold text-deep-teal mb-4">Social Media Campaign for Fashion Brand</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Increased engagement, reach, and traffic through visually engaging Instagram and Facebook campaigns. Leveraged influencer collaborations and targeted paid ads to grow brand awareness.
+                    </p>
+                    <div class="space-y-3">
+                        <h4 class="font-semibold text-deep-teal text-lg">Key Achievements:</h4>
+                        <ul class="space-y-2 text-gray-700">
                             <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Social media management</span>
+                                <span class="text-orange mr-3 mt-1">•</span>
+                                <span>Social media management and content creation</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Influencer partnerships</span>
+                                <span class="text-orange mr-3 mt-1">•</span>
+                                <span>Influencer partnerships and brand collaborations</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Paid social advertising</span>
+                                <span class="text-orange mr-3 mt-1">•</span>
+                                <span>Paid social advertising for maximum reach</span>
                             </li>
                         </ul>
                     </div>
@@ -3163,44 +3178,53 @@ button:focus, a:focus, input:focus, textarea:focus {
             </div>
 
             <!-- Project 3: Content Marketing -->
-            <div class="rounded-2xl shadow-xl overflow-hidden" style="background-color: #7a7a7a;">
-                <div class="md:flex">
-                    <!-- Image -->
-                    <div class="md:w-1/3">
-                        <img src="images/content-marketing-showcase.png" alt="Content Marketing Showcase" class="w-full h-64 md:h-80 object-cover rounded-2xl shadow-xl">
-                    </div>
-                    <!-- Content -->
-                    <div class="md:w-2/3 p-8">
-                        <div class="flex flex-wrap items-center gap-4 mb-4">
-                            <h3 class="text-2xl font-bold text-white">Content Marketing for E-Commerce Brand</h3>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap gap-2">
                             <span class="px-3 py-1 bg-orange/10 text-orange rounded-full text-sm font-medium">Content Marketing</span>
                             <span class="px-3 py-1 bg-sea-blue/10 text-sea-blue rounded-full text-sm font-medium">E-Commerce</span>
-                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">CreativeWork</span>
+                            <span class="px-3 py-1 bg-aqua/10 text-aqua rounded-full text-sm font-medium">Lead Generation</span>
                         </div>
-                        <p class="text-gray-200 leading-relaxed mb-6">
-                            Boosted conversions and customer loyalty through value rich blogs, targeted emails, and video storytelling that positioned the brand as an authority in its niche.
+                        <h3 class="text-3xl font-bold text-deep-teal mb-4">Content Marketing for E-Commerce Brand</h3>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            Boosted conversions and customer loyalty through value-rich blogs, targeted emails, and video storytelling that positioned the brand as an authority in its niche.
                         </p>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Blog content and product guides</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Email marketing automation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-orange mr-2"></span>
-                                <span>Video marketing assets</span>
-                            </li>
-                        </ul>
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-deep-teal text-lg">Key Achievements:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-orange mr-3 mt-1">•</span>
+                                    <span>Blog content and product guides creation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange mr-3 mt-1">•</span>
+                                    <span>Email marketing automation campaigns</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange mr-3 mt-1">•</span>
+                                    <span>Video marketing assets for engagement</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="order-1 lg:order-2">
+                    <img src="images/content-marketing-showcase.png" alt="Content Marketing Showcase" class="rounded-2xl shadow-xl w-full h-80 object-cover">
+                </div>
+            </div>
+        </div>
 
-                    
-
-
-<!-- PRICING SECTION -->
+        <!-- Call to Action -->
+        <div class="text-center mt-16">
+            <div class="bg-gradient-to-r from-deep-teal to-sea-blue text-white p-12 rounded-3xl max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold mb-4">Ready to See Similar Results?</h3>
+                <p class="text-xl mb-8 text-white/90">Let's discuss how we can help your business achieve measurable growth.</p>
+                <a href="#contact" class="px-8 py-4 bg-orange text-white font-bold text-lg rounded-lg hover:bg-opacity-90 inline-block shadow-lg">Start Your Growth Journey →</a>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="pricing" class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
