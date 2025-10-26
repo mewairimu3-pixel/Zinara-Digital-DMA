@@ -90,11 +90,18 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-image: url('https://via.placeholder.com/1920x1080/FAFAFA/000000?text=Digital+Activity+Background');
-            background-size: cover;
-            background-position: center;
-            color: #1E1E1E;
             position: relative;
+            overflow: hidden;
+        }
+        #hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(1px);
+            z-index: -1;
         }
         #hero::before {
             content: '';
@@ -103,7 +110,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(250, 250, 250, 0.8);
+            background-color: rgba(250, 250, 250, 0.85);
+            z-index: 0;
         }
         #hero .container {
             position: relative;
@@ -112,15 +120,30 @@
         #hero h1 {
             font-size: 60px;
             margin-bottom: 16px;
+            animation: fadeInUp 1s ease-out;
         }
         #hero p {
             font-size: 24px;
             margin-bottom: 32px;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
-        #hero .buttons {
+        #hero .benefits {
             display: flex;
-            gap: 16px;
             justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+            font-weight: 600;
+            color: #1E1E1E;
+        }
+        #hero .benefit {
+            background-color: rgba(250, 250, 250, 0.9);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #D4A857;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         #story {
             padding: 100px 0;
@@ -152,19 +175,45 @@
             background-color: #FAFAFA;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .service-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
         .service-card i {
             font-size: 48px;
             color: #D4A857;
             margin-bottom: 16px;
         }
-        #case-studies {
+        #proof {
             padding: 100px 0;
             background-color: #F5EDE2;
+        }
+        .metrics {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+        .metric {
+            background-color: #D4A857;
+            color: #1E1E1E;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        .highlight {
+            background-color: #FAFAFA;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .case-carousel {
             display: flex;
@@ -181,29 +230,35 @@
         #framework {
             padding: 100px 0;
         }
-        .timeline {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .framework-container {
             position: relative;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background-color: #D4A857;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
         }
         .step {
+            position: absolute;
+            width: 120px;
+            height: 120px;
             background-color: #FAFAFA;
-            padding: 32px;
-            border-radius: 8px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            position: relative;
-            z-index: 1;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        .step:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .step:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+        .step:nth-child(2) { top: 25%; right: 0; }
+        .step:nth-child(3) { bottom: 25%; right: 0; }
+        .step:nth-child(4) { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .step:nth-child(5) { bottom: 25%; left: 0; }
         #content {
             padding: 100px 0;
             background-color: #F5EDE2;
@@ -245,28 +300,64 @@
             color: #FAFAFA;
             text-decoration: none;
         }
-        @media (max-width: 768px) {
-            #hero h1 {
-                font-size: 36px;
-            }
-            #hero p {
-                font-size: 18px;
-            }
-            #story .split {
-                flex-direction: column;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            nav ul {
-                display: none;
-            }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #FAFAFA;
+            margin: 15% auto;
+            padding: 32px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+        }
+        .close {
+            color: #1E1E1E;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        #faq {
+            padding: 100px 0;
+        }
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 16px;
+        }
+        .faq-question {
+            width: 100%;
+            padding: 16px;
+            background-color: #FAFAFA;
+            border: none;
+            text-align: left;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .faq-question:hover {
+            background-color: #F5EDE2;
+        }
+        .faq-answer {
+            display: none;
+            padding: 16px;
+            background-color: #F5EDE2;
+            border-radius: 0 0 8px 8px;
         }
     </style>
 </head>
@@ -285,12 +376,20 @@
     </header>
 
     <section id="hero">
+        <video autoplay muted loop poster="https://via.placeholder.com/1920x1080/FAFAFA/000000?text=Hero+Background">
+            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+        </video>
         <div class="container">
-            <h1>We grow brands through digital strategy, storytelling, and measurable impact.</h1>
-            <p>Zinara partners with startups, SMEs, and established enterprises across Africa to create intelligent digital growth systems.</p>
+            <h1>Turn Clicks into Clients with Zinara Digital’s Proven 90-Day Growth Framework</h1>
+            <p>A trusted digital growth partner for startups, SMEs and established brands across Africa.</p>
+            <div class="benefits">
+                <div class="benefit">Increase Conversions</div>
+                <div class="benefit">Grow Faster</div>
+                <div class="benefit">Boost Visibility</div>
+            </div>
             <div class="buttons">
-                <a href="#services" class="btn">Let’s Build Your Growth Story</a>
-                <a href="#case-studies" class="btn btn-secondary">See Our Work</a>
+                <a href="#framework" class="btn">Get My Free 90-Day Growth Plan</a>
+                <a href="#services" class="btn btn-secondary">See How It Works</a>
             </div>
         </div>
     </section>
@@ -298,13 +397,13 @@
     <section id="story">
         <div class="container">
             <div class="split">
-                <img src="https://via.placeholder.com/600x400/F5EDE2/1E1E1E?text=Workspace+Image" alt="Zinara Workspace">
+                <img src="https://via.placeholder.com/600x400/F5EDE2/1E1E1E?text=Authentic+Team+Workspace" alt="Zinara Team in Ruiru">
                 <div class="text">
-                    <h2>Where We Started, Why We Exist</h2>
-                    <p><strong>Situation:</strong> We started in Ruiru, seeing small businesses struggle to be seen online.</p>
-                    <p><strong>Struggle:</strong> Resources were limited. Markets were crowded.</p>
-                    <p><strong>Turning point:</strong> We built Zinara to give African brands the tools to compete digitally.</p>
-                    <p><strong>Outcome:</strong> Today, we partner across Africa, blending creativity and data for sustainable growth.</p>
+                    <h2>For Those Who Refuse to Stay Invisible</h2>
+                    <p><strong>Situation:</strong> When we started in Ruiru we saw small businesses struggle to stand out amidst limited budgets, crowded markets, and digital noise.</p>
+                    <p><strong>Struggle:</strong> Many African entrepreneurs lacked the tools and strategies to compete digitally, leading to missed opportunities and slow growth.</p>
+                    <p><strong>Turning Point:</strong> We created Zinara Digital to build growth engines for African brands, blending local insights with global best practices.</p>
+                    <p><strong>Outcome:</strong> Now we partner across Africa to tell authentic brand stories and drive measurable growth for startups, SMEs, and established enterprises.</p>
                 </div>
             </div>
         </div>
@@ -317,31 +416,62 @@
                 <div class="service-card">
                     <i class="fas fa-chart-line"></i>
                     <h3>Digital Strategy & Growth Systems</h3>
-                    <p>Challenge: Fragmented online presence. Strategy: Integrated growth frameworks. Result: +50% engagement.</p>
+                    <p><strong>Challenge:</strong> Fragmented online presence hindering visibility and growth.</p>
+                    <p><strong>Our Strategy:</strong> Integrated frameworks combining SEO, analytics, and user-centric design.</p>
+                    <p><strong>Result:</strong> +50% engagement and measurable ROI within months.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-palette"></i>
                     <h3>Branding & Identity</h3>
-                    <p>Challenge: Unclear brand voice. Strategy: Story-driven identities. Result: Loyal customer base.</p>
+                    <p><strong>Challenge:</strong> Unclear brand voice leading to inconsistent messaging.</p>
+                    <p><strong>Our Strategy:</strong> Story-driven identities rooted in African narratives and values.</p>
+                    <p><strong>Result:</strong> Loyal customer base and stronger market positioning.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-bullseye"></i>
                     <h3>Performance Marketing (SEO, Ads, CRO)</h3>
-                    <p>Challenge: Low conversions. Strategy: Data-optimized campaigns. Result: ROI growth.</p>
+                    <p><strong>Challenge:</strong> Low conversions despite high traffic.</p>
+                    <p><strong>Our Strategy:</strong> Data-optimized campaigns with A/B testing and retargeting.</p>
+                    <p><strong>Result:</strong> 300% ROI increase and sustainable lead growth.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-pen-nib"></i>
                     <h3>Content & Storytelling Strategy</h3>
-                    <p>Challenge: Bland content. Strategy: Emotional narratives. Result: Audience connection.</p>
+                    <p><strong>Challenge:</strong> Bland content failing to engage audiences.</p>
+                    <p><strong>Our Strategy:</strong> Emotional narratives tailored to African markets.</p>
+                    <p><strong>Result:</strong> Deeper audience connection and viral social shares.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-desktop"></i>
                     <h3>Web & Experience Design</h3>
-                    <p>Challenge: Poor UX. Strategy: User-centric designs. Result: Improved retention.</p>
+                    <p><strong>Challenge:</strong> Poor UX causing high bounce rates.</p>
+                    <p><strong>Our Strategy:</strong> Mobile-first, accessible designs with storytelling elements.</p>
+                    <p><strong>Result:</strong> Improved retention rates and user satisfaction.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 32px;">
                 <a href="#framework" class="btn">Explore how we build your growth engine</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="proof">
+        <div class="container">
+            <h2>What You’ll Achieve in 90 Days</h2>
+            <div class="metrics">
+                <div class="metric">2× More Qualified Leads</div>
+                <div class="metric">30-50% Higher Conversion Rates</div>
+                <div class="metric">300% ROI Growth</div>
+            </div>
+            <div class="highlights">
+                <div class="highlight">
+                    <h3>Medvera</h3>
+                    <p>Cut ad costs by 47% while increasing qualified leads.</p>
+                </div>
+                <div class="highlight">
+                    <h3>Tech Startup</h3>
+                    <p>Organic traffic +40% in 3 months with our SEO strategy.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -351,17 +481,27 @@
             <h2>Proof Through Stories — Case Studies</h2>
             <div class="case-carousel">
                 <div class="case-card">
-                    <h3>Startup X</h3>
-                    <p><strong>Challenge:</strong> When Startup X approached us…</p>
-                    <p><strong>Solution:</strong> We redefined their digital strategy…</p>
-                    <p><strong>Result:</strong> +45% conversion in 60 days.</p>
+                    <img src="https://via.placeholder.com/400x250/F5EDE2/1E1E1E?text=Startup+X+Transformation" alt="Startup X Case Study" style="width:100%; height:200px; object-fit:cover; margin-bottom:16px;">
+                    <h3>Startup X: From Local to Global</h3>
+                    <p><strong>Challenge:</strong> When Startup X approached us, they were a promising Nairobi-based fintech startup struggling with online visibility despite strong local traction.</p>
+                    <p><strong>Solution:</strong> We redefined their digital strategy, implementing a comprehensive SEO and content marketing plan that highlighted their unique African market insights.</p>
+                    <p><strong>Result:</strong> +45% conversion rate in 60 days, securing $2M in Series A funding through increased inbound leads.</p>
                     <a href="#" class="btn">Read Full Story</a>
                 </div>
                 <div class="case-card">
-                    <h3>SME Y</h3>
-                    <p><strong>Challenge:</strong> SME Y struggled with visibility…</p>
-                    <p><strong>Solution:</strong> Targeted SEO and ads…</p>
-                    <p><strong>Result:</strong> 200% lead increase.</p>
+                    <img src="https://via.placeholder.com/400x250/F5EDE2/1E1E1E?text=SME+Y+Growth" alt="SME Y Case Study" style="width:100%; height:200px; object-fit:cover; margin-bottom:16px;">
+                    <h3>SME Y: Scaling E-Commerce in East Africa</h3>
+                    <p><strong>Challenge:</strong> SME Y, a handmade crafts retailer, faced intense competition and low online sales despite a loyal in-person customer base.</p>
+                    <p><strong>Solution:</strong> We built a targeted social media and PPC campaign, combined with an optimized e-commerce site that told the story of local artisans.</p>
+                    <p><strong>Result:</strong> 200% increase in online leads and 150% revenue growth within six months.</p>
+                    <a href="#" class="btn">Read Full Story</a>
+                </div>
+                <div class="case-card">
+                    <img src="https://via.placeholder.com/400x250/F5EDE2/1E1E1E?text=Enterprise+Z+Brand" alt="Enterprise Z Case Study" style="width:100%; height:200px; object-fit:cover; margin-bottom:16px;">
+                    <h3>Enterprise Z: Rebranding for Digital Age</h3>
+                    <p><strong>Challenge:</strong> A traditional manufacturing firm in Johannesburg needed to modernize its brand to attract younger B2B clients.</p>
+                    <p><strong>Solution:</strong> Complete brand overhaul with storytelling-focused website and LinkedIn campaigns emphasizing innovation and sustainability.</p>
+                    <p><strong>Result:</strong> 35% increase in qualified leads and improved brand perception scores.</p>
                     <a href="#" class="btn">Read Full Story</a>
                 </div>
             </div>
@@ -371,7 +511,7 @@
     <section id="framework">
         <div class="container">
             <h2>The Zinara Framework — How We Build Growth Stories</h2>
-            <div class="timeline">
+            <div class="framework-container">
                 <div class="step">
                     <h3>Discover</h3>
                     <p>Research & audit</p>
@@ -405,15 +545,21 @@
             <div class="content-grid">
                 <div>
                     <div class="post">
-                        <img src="https://via.placeholder.com/400x200/F5EDE2/1E1E1E?text=Article+Image" alt="Article">
-                        <h3>Building Brands in Africa</h3>
-                        <p>Insights on digital growth...</p>
+                        <img src="https://via.placeholder.com/400x200/F5EDE2/1E1E1E?text=Building+Brands+in+Africa" alt="Building Brands in Africa">
+                        <h3>Building Brands That Resonate in Africa</h3>
+                        <p>Insights into crafting authentic brand identities that connect with diverse African audiences, blending tradition with modernity for lasting impact.</p>
                         <a href="#" class="btn">Read the Story</a>
                     </div>
                     <div class="post">
-                        <img src="https://via.placeholder.com/400x200/F5EDE2/1E1E1E?text=Article+Image" alt="Article">
-                        <h3>SEO Strategies for SMEs</h3>
-                        <p>How to optimize for local markets...</p>
+                        <img src="https://via.placeholder.com/400x200/F5EDE2/1E1E1E?text=SEO+Strategies+for+SMEs" alt="SEO Strategies for SMEs">
+                        <h3>SEO Strategies That Work for African SMEs</h3>
+                        <p>How to optimize your online presence for local search engines and mobile users, with practical tips for small businesses in emerging markets.</p>
+                        <a href="#" class="btn">Read the Story</a>
+                    </div>
+                    <div class="post">
+                        <img src="https://via.placeholder.com/400x200/F5EDE2/1E1E1E?text=Content+Marketing+Trends" alt="Content Marketing Trends">
+                        <h3>Content Marketing Trends Shaping 2025</h3>
+                        <p>Exploring AI-driven storytelling, video content, and community building strategies that drive engagement and conversions.</p>
                         <a href="#" class="btn">Read the Story</a>
                     </div>
                 </div>
@@ -429,10 +575,36 @@
         </div>
     </section>
 
+    <section id="faq">
+        <div class="container">
+            <h2>Questions You Might Be Asking…</h2>
+            <div class="accordion">
+                <div class="faq-item">
+                    <button class="faq-question">How soon can I see results?</button>
+                    <div class="faq-answer">
+                        <p>Many clients see initial improvements within 2-4 weeks, with significant growth in 30-90 days. For example, one startup doubled leads in 60 days through our targeted SEO and ads strategy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What’s the minimum investment required?</button>
+                    <div class="faq-answer">
+                        <p>We offer flexible packages starting from $500/month for basic SEO and social media. Our growth plans scale with your needs, ensuring ROI from day one.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you work with businesses outside Kenya?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We partner across Africa, from Nairobi to Lagos, adapting strategies to local markets while leveraging global best practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="cta">
         <div class="container">
-            <h2>Your next growth story starts here.</h2>
-            <p>Let’s turn your brand’s vision into a measurable, memorable experience.</p>
+            <h2>Ready to See These Results in Your Business?</h2>
+            <p>Don’t wait another day. Your next growth story starts here.</p>
             <a href="#" class="btn">Partner With Zinara</a>
         </div>
     </section>
@@ -442,34 +614,109 @@
             <div class="footer-grid">
                 <div>
                     <h3>About Zinara</h3>
-                    <p>We empower African brands with digital growth systems.</p>
+                    <p>We empower African brands with intelligent digital growth systems, blending creativity, data, and storytelling for sustainable success.</p>
+                    <div class="social-links" style="margin-top: 16px;">
+                        <a href="#" style="margin-right: 16px;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="margin-right: 16px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="margin-right: 16px;"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div>
                     <h3>Services</h3>
                     <ul>
                         <li><a href="#">Digital Strategy</a></li>
-                        <li><a href="#">Branding</a></li>
-                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Branding & Identity</a></li>
+                        <li><a href="#">Performance Marketing</a></li>
+                        <li><a href="#">Content Strategy</a></li>
+                        <li><a href="#">Web Design</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Insights</h3>
+                    <h3>Insights & Resources</h3>
                     <ul>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Free Guides</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Contact</h3>
-                    <p>Email: info@zinara.com</p>
-                    <p>Phone: +254 123 456</p>
-                    <a href="#">Newsletter Signup</a>
+                    <h3>Contact & Connect</h3>
+                    <p>Email: hello@zinara.com</p>
+                    <p>Phone: +254 700 123 456</p>
+                    <p>Address: Nairobi, Kenya</p>
+                    <a href="#" class="btn" style="margin-top: 16px;">Start Your Project</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Start Your Growth Story</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us about your project</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
     <script>
+        // Modal functionality
+        const modal = document.getElementById('contactModal');
+        const closeBtn = document.getElementsByClassName('close')[0];
+        const ctaButtons = document.querySelectorAll('.btn[href="#"]');
+
+        ctaButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'block';
+            });
+        });
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Form submission (placeholder)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We\'ll get back to you soon.');
+            modal.style.display = 'none';
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
         // Simple scroll animation
         window.addEventListener('scroll', () => {
             const elements = document.querySelectorAll('.step');
