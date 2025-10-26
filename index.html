@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinara Digital Marketing | Digital Strategy, Storytelling, and Measurable Impact</title>
+    <meta name="description" content="Zinara partners with startups, SMEs, and established enterprises across Africa to create intelligent digital growth systems.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1E1E1E;
+            background-color: #FAFAFA;
+        }
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 120px;
+            }
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(250, 250, 250, 0.9);
+            z-index: 100;
+            padding: 16px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #D4A857;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1E1E1E;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #D4A857;
+        }
+        .btn {
+            background-color: #1E1E1E;
+            color: #FAFAFA;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #D4A857;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #1E1E1E;
+            color: #1E1E1E;
+        }
+        .btn-secondary:hover {
+            background-color: #1E1E1E;
+            color: #FAFAFA;
+        }
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url('https://via.placeholder.com/1920x1080/FAFAFA/000000?text=Digital+Activity+Background');
+            background-size: cover;
+            background-position: center;
+            color: #1E1E1E;
+            position: relative;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(250, 250, 250, 0.8);
+        }
+        #hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        #hero h1 {
+            font-size: 60px;
+            margin-bottom: 16px;
+        }
+        #hero p {
+            font-size: 24px;
+            margin-bottom: 32px;
+        }
+        #hero .buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+        #story {
+            padding: 100px 0;
+            background-color: #F5EDE2;
+        }
+        #story .split {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+        }
+        #story img {
+            flex: 1;
+            height: 400px;
+            object-fit: cover;
+        }
+        #story .text {
+            flex: 1;
+        }
+        #services {
+            padding: 100px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            padding: 32px;
+            background-color: #FAFAFA;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-3px);
+        }
+        .service-card i {
+            font-size: 48px;
+            color: #D4A857;
+            margin-bottom: 16px;
+        }
+        #case-studies {
+            padding: 100px 0;
+            background-color: #F5EDE2;
+        }
+        .case-carousel {
+            display: flex;
+            gap: 32px;
+            overflow-x: auto;
+        }
+        .case-card {
+            min-width: 300px;
+            padding: 32px;
+            background-color: #FAFAFA;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        #framework {
+            padding: 100px 0;
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #D4A857;
+        }
+        .step {
+            background-color: #FAFAFA;
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        #content {
+            padding: 100px 0;
+            background-color: #F5EDE2;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 64px;
+        }
+        .post {
+            margin-bottom: 32px;
+        }
+        .post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 16px;
+        }
+        #cta {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(to right, #D4A857, #1E1E1E);
+            color: #FAFAFA;
+        }
+        footer {
+            padding: 64px 0;
+            background-color: #1E1E1E;
+            color: #FAFAFA;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+        footer h3 {
+            margin-bottom: 16px;
+        }
+        footer a {
+            color: #FAFAFA;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 36px;
+            }
+            #hero p {
+                font-size: 18px;
+            }
+            #story .split {
+                flex-direction: column;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Zinara</div>
+            <ul>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#case-studies">Work</a></li>
+                <li><a href="#content">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>We grow brands through digital strategy, storytelling, and measurable impact.</h1>
+            <p>Zinara partners with startups, SMEs, and established enterprises across Africa to create intelligent digital growth systems.</p>
+            <div class="buttons">
+                <a href="#services" class="btn">Let’s Build Your Growth Story</a>
+                <a href="#case-studies" class="btn btn-secondary">See Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="story">
+        <div class="container">
+            <div class="split">
+                <img src="https://via.placeholder.com/600x400/F5EDE2/1E1E1E?text=Workspace+Image" alt="Zinara Workspace">
+                <div class="text">
+                    <h2>Where We Started, Why We Exist</h2>
+                    <p><strong>Situation:</strong> We started in Ruiru, seeing small businesses struggle to be seen online.</p>
+                    <p><strong>Struggle:</strong> Resources were limited. Markets were crowded.</p>
+                    <p><strong>Turning point:</strong> We built Zinara to give African brands the tools to compete digitally.</p>
+                    <p><strong>Outcome:</strong> Today, we partner across Africa, blending creativity and data for sustainable growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>What We Do — Strategic Digital Marketing That Delivers</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Digital Strategy & Growth Systems</h3>
+                    <p>Challenge: Fragmented online presence. Strategy: Integrated growth frameworks. Result: +50% engagement.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Branding & Identity</h3>
+                    <p>Challenge: Unclear brand voice. Strategy: Story-driven identities. Result: Loyal customer base.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Performance Marketing (SEO, Ads, CRO)</h3>
+                    <p>Challenge: Low conversions. Strategy: Data-optimized campaigns. Result: ROI growth.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-pen-nib"></i>
+                    <h3>Content & Storytelling Strategy</h3>
+                    <p>Challenge: Bland content. Strategy: Emotional narratives. Result: Audience connection.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Web & Experience Design</h3>
+                    <p>Challenge: Poor UX. Strategy: User-centric designs. Result: Improved retention.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="#framework" class="btn">Explore how we build your growth engine</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies">
+        <div class="container">
+            <h2>Proof Through Stories — Case Studies</h2>
+            <div class="case-carousel">
+                <div class="case-card">
+                    <h3>Startup X</h3>
+                    <p><strong>Challenge:</strong> When Startup X approached us…</p>
+                    <p><strong>Solution:</strong> We redefined their digital strategy…</p>
+                    <p><strong>Result:</strong> +45% conversion in 60 days.</p>
+                    <a href="#" class="btn">Read Full Story</a>
+                </div>
+                <div class="case-card">
+                    <h3>SME Y</h3>
+                    <p><strong>Challenge:</strong> SME Y struggled with visibility…</p>
+                    <p><strong>Solution:</strong> Targeted SEO and ads…</p>
+                    <p><strong>Result:</strong> 200% lead increase.</p>
+                    <a href="#" class="btn">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="framework">
+        <div class="container">
+            <h2>The Zinara Framework — How We Build Growth Stories</h2>
+            <div class="timeline">
+                <div class="step">
+                    <h3>Discover</h3>
+                    <p>Research & audit</p>
+                </div>
+                <div class="step">
+                    <h3>Define</h3>
+                    <p>Strategy & positioning</p>
+                </div>
+                <div class="step">
+                    <h3>Design</h3>
+                    <p>Visuals & messaging</p>
+                </div>
+                <div class="step">
+                    <h3>Deliver</h3>
+                    <p>Execution & optimization</p>
+                </div>
+                <div class="step">
+                    <h3>Deepen</h3>
+                    <p>Ongoing growth & measurement</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="#cta" class="btn">Let’s Start With Discovery</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="content">
+        <div class="container">
+            <h2>Stories, Data & Insights From Our Team</h2>
+            <div class="content-grid">
+                <div>
+                    <div class="post">
+                        <img src="https://via.placeholder.com/400x200/F5EDE2/1E1E1E?text=Article+Image" alt="Article">
+                        <h3>Building Brands in Africa</h3>
+                        <p>Insights on digital growth...</p>
+                        <a href="#" class="btn">Read the Story</a>
+                    </div>
+                    <div class="post">
+                        <img src="https://via.placeholder.com/400x200/F5EDE2/1E1E1E?text=Article+Image" alt="Article">
+                        <h3>SEO Strategies for SMEs</h3>
+                        <p>How to optimize for local markets...</p>
+                        <a href="#" class="btn">Read the Story</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Filter by Topic</h3>
+                    <ul>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Growth</a></li>
+                        <li><a href="#">Africa Digital</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta">
+        <div class="container">
+            <h2>Your next growth story starts here.</h2>
+            <p>Let’s turn your brand’s vision into a measurable, memorable experience.</p>
+            <a href="#" class="btn">Partner With Zinara</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>About Zinara</h3>
+                    <p>We empower African brands with digital growth systems.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Digital Strategy</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Insights</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>Email: info@zinara.com</p>
+                    <p>Phone: +254 123 456</p>
+                    <a href="#">Newsletter Signup</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll animation
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.step');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        document.querySelectorAll('.step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s, transform 0.6s';
+        });
+    </script>
+</body>
+</html>
