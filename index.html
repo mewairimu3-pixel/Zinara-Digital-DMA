@@ -2353,6 +2353,126 @@ button:focus, a:focus, input:focus, textarea:focus {
     }
 }
 
+/* Card Hover Effects - All Cards */
+.pain-card:hover {
+    background: #122B68 !important;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.outcome-card:hover {
+    background-color: #122B68 !important;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 48, 63, 0.12);
+}
+
+.service-card:hover {
+    background-color: #122B68 !important;
+    color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 48, 63, 0.15);
+}
+
+.mission-card:hover, .vision-card:hover {
+    background: linear-gradient(135deg, #122B68 0%, #1a3a8a 100%) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 48, 63, 0.2);
+}
+
+.case-card:hover {
+    background-color: #122B68 !important;
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 48, 63, 0.15);
+}
+
+.work-card:hover {
+    background-color: #122B68 !important;
+    color: white;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 48, 63, 0.15);
+}
+
+.differentiator-card:hover {
+    border-color: #122B68;
+    background-color: #122B68 !important;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0, 48, 63, 0.08);
+}
+
+.pricing-card:hover {
+    background-color: #122B68 !important;
+    color: white;
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 48, 63, 0.15);
+}
+
+.testimonial-card:hover {
+    background-color: #122B68 !important;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 48, 63, 0.08);
+}
+
+/* Standardized Text Colors */
+h1, h2, h3, h4, h5, h6 {
+    color: #2B2B2B !important;
+}
+
+p, span, li, a, label {
+    color: #666666 !important;
+}
+
+/* Override for specific elements */
+a {
+    color: #122B68 !important;
+}
+
+a:hover {
+    color: #FF6B35 !important;
+}
+
+/* White text on dark backgrounds */
+.text-white, 
+section[style*="background-color: #00043f"] p,
+section[style*="background-color: #00043f"] h1,
+section[style*="background-color: #00043f"] h2,
+section[style*="background-color: #00043f"] h3,
+section[style*="background-color: #00043f"] h4,
+section[style*="background-color: #00043f"] h5,
+section[style*="background-color: #00043f"] h6 {
+    color: white !important;
+}
+
+/* Light gray text for secondary content */
+.text-gray-100, .text-gray-200, .text-gray-300 {
+    color: #f3f4f6 !important;
+}
+
+.text-gray-400, .text-gray-500 {
+    color: #9ca3af !important;
+}
+
+.text-gray-600, .text-gray-700, .text-gray-800 {
+    color: #666666 !important;
+}
+
+/* Orange accent text */
+.text-orange {
+    color: #FF6B35 !important;
+}
+
+/* Deep teal text */
+.text-deep-teal {
+    color: #2B2B2B !important;
+}
+
+/* Sea blue text */
+.text-sea-blue {
+    color: #122B68 !important;
+}
+
     </style>
     
     <!-- Schema.org JSON-LD Structured Data for SEO & AI Search Engines -->
@@ -2503,9 +2623,8 @@ button:focus, a:focus, input:focus, textarea:focus {
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#home" class="text-gray-700 hover:text-[#122B68] transition-colors font-medium">Home</a>
-                <a href="#about" class="text-gray-700 hover:text-[#122B68] transition-colors font-medium">About</a>
                 <a href="#process" class="text-gray-700 hover:text-[#122B68] transition-colors font-medium">Services</a>
-                <a href="#proof" class="text-gray-700 hover:text-[#122B68] transition-colors font-medium">Our Work</a>
+                <a href="#ourwork" class="text-gray-700 hover:text-[#122B68] transition-colors font-medium">Our Work</a>
                 <a href="#pricing" class="text-gray-700 hover:text-[#122B68] transition-colors font-medium">Pricing</a>
                 <a href="#contact" class="px-8 py-4 bg-orange text-white font-semibold rounded-lg hover:bg-opacity-90 transition-all shadow-lg">Get Started</a>
             </div>
@@ -2517,9 +2636,8 @@ button:focus, a:focus, input:focus, textarea:focus {
         </div>
         <div id="mobileMenu" class="hidden md:hidden pb-6">
             <a href="#home" onclick="toggleMobileMenu()" class="block py-3 text-gray-700 hover:text-[#122B68]">Home</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block py-3 text-gray-700 hover:text-[#122B68]">About</a>
             <a href="#process" onclick="toggleMobileMenu()" class="block py-3 text-gray-700 hover:text-[#122B68]">Services</a>
-            <a href="#proof" onclick="toggleMobileMenu()" class="block py-3 text-gray-700 hover:text-[#122B68]">Our Work</a>
+            <a href="#ourwork" onclick="toggleMobileMenu()" class="block py-3 text-gray-700 hover:text-[#122B68]">Our Work</a>
             <a href="#pricing" onclick="toggleMobileMenu()" class="block py-3 text-gray-700 hover:text-[#122B68]">Pricing</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="block mt-4 text-center px-8 py-4 bg-orange text-white font-semibold rounded-lg">Get Started</a>
         </div>
