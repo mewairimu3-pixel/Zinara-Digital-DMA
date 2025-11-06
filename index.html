@@ -2523,28 +2523,28 @@ button:focus, a:focus, input:focus, textarea:focus {
 </nav>
 
 <!-- HERO SECTION -->
-<section id="home" class="pt-32 pb-20 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(0, 4, 63, 0.7) 0%, rgba(18, 43, 104, 0.7) 100%), url('images/hero-background.jpg') center/cover no-repeat; min-height: 100vh;">
-    <!-- Background Pattern Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-sea-blue/10"></div>
-    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-orange/10 to-transparent rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-deep-teal/10 to-transparent rounded-full blur-3xl"></div>
+<section id="home" class="pt-32 pb-20 relative overflow-hidden" style="background: linear-gradient(135deg, rgba(0, 4, 63, 0.5) 0%, rgba(18, 43, 104, 0.5) 100%), url('images/hero-background.jpg') center/cover no-repeat fixed; min-height: 100vh; background-attachment: fixed;">
+    <!-- Background Pattern Overlay with Motion -->
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-sea-blue/5 animate-pulse" style="animation: pulse 8s ease-in-out infinite;"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-orange/5 to-transparent rounded-full blur-3xl animate-float" style="animation: float 20s ease-in-out infinite;"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-deep-teal/5 to-transparent rounded-full blur-3xl" style="animation: float 25s ease-in-out infinite reverse;"></div>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <!-- Main Hero Content -->
         <div class="text-center mb-16 animate-fade-in-up">
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-deep-teal mb-4 leading-tight animate-slide-up">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight animate-slide-up drop-shadow-lg">
                 Turn Clicks into Clients with Zinara Digital's
             </h1>
-            <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-orange mb-6 leading-tight animate-slide-up animation-delay-100">
+            <div class="text-3xl md:text-4xl lg:text-5xl font-bold text-orange mb-6 leading-tight animate-slide-up animation-delay-100 drop-shadow-lg">
                 Proven 90-Day Growth Framework
             </div>
-            <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up animation-delay-200">
+            <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed animate-fade-in-up animation-delay-200 drop-shadow-md">
                 A trusted digital marketing agency specializing in reliable growth systems that deliver measurable results for businesses of all sizes.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up animation-delay-400">
-                <a href="#contact" class="px-8 py-4 bg-orange text-white font-bold text-lg rounded-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 animate-pulse-gentle">
+                <a href="#contact" class="px-8 py-4 bg-orange text-white font-bold text-lg rounded-lg hover:bg-yellow-500 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 animate-pulse-gentle drop-shadow-lg">
                     Get My Free 90-Day Growth Plan
                 </a>
-                <a href="#process" class="px-8 py-4 bg-white text-deep-teal font-bold text-lg rounded-lg hover:bg-gray-50 transition-all duration-300 border-2 border-deep-teal shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <a href="#process" class="px-8 py-4 bg-white/95 text-deep-teal font-bold text-lg rounded-lg hover:bg-white transition-all duration-300 border-2 border-white shadow-lg hover:shadow-2xl transform hover:-translate-y-1 drop-shadow-lg">
                     See How It Works
                 </a>
             </div>
@@ -2588,8 +2588,8 @@ button:focus, a:focus, input:focus, textarea:focus {
 
         <!-- CTA Section -->
         <div class="text-center animate-fade-in-up animation-delay-1400">
-            <h2 class="text-3xl md:text-4xl font-bold text-deep-teal mb-6 animate-slide-up">Start Your Free Audit Today</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 animate-slide-up drop-shadow-lg">Start Your Free Audit Today</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200 drop-shadow-md">
                 Uncover the 5 hidden opportunities blocking your growth and get a custom 90-day roadmap that actually delivers results.
             </p>
             <div class="bg-deep-teal text-white p-12 rounded-3xl max-w-4xl mx-auto transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-3xl animate-float">
