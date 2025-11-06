@@ -34,68 +34,59 @@
     <meta name="geo.position" content="-1.286389;36.817223">
     <meta name="ICBM" content="-1.286389, 36.817223">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Structured Data for AI & SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Zinara Digital Marketing",
-      "description": "Leading digital marketing agency in Nairobi, Kenya specializing in AI-driven marketing, SEO, and conversion optimization",
-      "url": "https://zinara-digital.com",
-      "logo": "https://zinara-digital.com/images/zinara-logo.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/company/zinara-digital",
-        "https://www.facebook.com/zinara.digital"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+254-704-878-872",
-        "contactType": "customer service",
-        "areaServed": "KE",
-        "availableLanguage": "en"
-      },
-      "service": [
-        {
-          "@type": "Service",
-          "name": "Digital Marketing Agency",
-          "description": "Comprehensive digital marketing services including SEO, PPC, social media, and conversion optimization",
-          "provider": {
-            "@type": "Organization",
-            "name": "Zinara Digital Marketing"
-          },
-          "areaServed": {
-            "@type": "Country",
-            "name": "Kenya"
-          }
-        },
-        {
-          "@type": "Service",
-          "name": "SEO Services",
-          "description": "Search engine optimization services to improve organic search rankings and drive qualified traffic"
-        },
-        {
-          "@type": "Service",
-          "name": "Conversion Rate Optimization",
-          "description": "AI-powered CRO services that turn website visitors into paying customers with data-driven optimization"
-        },
-        {
-          "@type": "Service",
-          "name": "Lead Generation",
-          "description": "Proven lead generation strategies using AI-powered targeting and automated funnels"
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-teal': '#00043f',
+                        'blush': '#EDDFE0',
+                        'sea-blue': '#122B68',
+                        'orange': '#FF6B35',
+                        'aqua': '#122B68',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            },
+            variants: {
+                extend: {
+                    animation: ['hover', 'focus', 'group-hover'],
+                },
+            },
         }
-      ]
-    }
     </script>
     
     <style>
@@ -107,7 +98,6 @@
             --light-gray: #f8f9fa;
             --dark-gray: #2B2B2B;
             --white: #ffffff;
-            --blush: #FFE8E8;
         }
         
         * {
@@ -121,54 +111,108 @@
             color: var(--dark-gray);
             line-height: 1.6;
             overflow-x: hidden;
-            background-color: var(--white);
+            background-color: #ffffff;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--deep-teal);
+        /* Header & Navigation */
+        .header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
         
-        h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.5rem; text-align: center; }
-        h3 { font-size: 1.75rem; }
-        p { 
-            margin-bottom: 1.5rem;
-            color: #4a4a4a;
+        .header.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--deep-teal);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--orange);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--deep-teal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--deep-teal);
         }
         
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 12px 30px;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
             text-align: center;
-            cursor: pointer;
+            font-size: 15px;
             border: none;
-            font-size: 1rem;
+            cursor: pointer;
         }
         
         .btn-primary {
-            background-color: var(--orange);
+            background: var(--orange);
             color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
         }
         
         .btn-primary:hover {
-            background-color: var(--sea-blue);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: var(--sea-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(3, 166, 161, 0.4);
         }
         
         .btn-outline {
@@ -178,148 +222,153 @@
         }
         
         .btn-outline:hover {
-            background-color: var(--orange);
+            background: var(--orange);
             color: white;
-        }
-        
-        /* Header & Navigation */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--deep-teal);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--orange);
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: var(--dark-gray);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        nav a:hover, nav a.active {
-            color: var(--orange);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--deep-teal);
-            cursor: pointer;
         }
         
         /* Hero Section */
         .hero {
-            padding: 180px 0 100px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 180px 40px 100px;
+            background: linear-gradient(135deg, #EDDFE0 0%, #122B68 100%);
             position: relative;
             overflow: hidden;
+            margin-top: 70px;
         }
         
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-            opacity: 0.1;
-            z-index: 0;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(3, 166, 161, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
         }
         
-        .hero-content {
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            align-items: center;
             position: relative;
             z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+        .hero-content h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
             line-height: 1.2;
+            color: #00043f;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
         }
         
-        .hero p {
-            font-size: 1.25rem;
-            color: #4a4a4a;
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-content h1 .highlight {
+            color: #FF6B35;
         }
         
-        .hero-buttons {
+        .hero-subheadline {
+            font-size: 22px;
+            color: #7A7A7A;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+        
+        .hero-bullets li {
+            font-size: 18px;
+            color: #00043f;
+            margin-bottom: 16px;
+            padding-left: 32px;
+            position: relative;
+            font-weight: 500;
+        }
+        
+        .hero-bullets li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #122B68;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .hero-cta-group {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
+            gap: 20px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .trust-bar {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(0, 48, 63, 0.1);
+        }
+        
+        .trust-logos {
+            display: flex;
+            gap: 40px;
             flex-wrap: wrap;
         }
         
         /* Services Section */
-        .services {
+        .services-section {
             padding: 100px 0;
-            background-color: var(--white);
+            background: #ffffff;
         }
         
-        .section-title {
+        .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
         
-        .section-title span {
-            display: inline-block;
-            color: var(--orange);
+        .section-subtitle {
+            color: #122B68;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00043f;
+            margin-bottom: 15px;
+        }
+        
+        .section-description {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .service-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2.5rem;
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             border: 1px solid #eee;
         }
         
@@ -336,251 +385,191 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 25px;
             color: white;
-            font-size: 1.8rem;
+            font-size: 28px;
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--deep-teal);
+            font-size: 22px;
+            font-weight: 700;
+            color: #00043f;
+            margin-bottom: 15px;
         }
         
         .service-card p {
             color: #666;
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-link {
-            color: var(--orange);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-        
-        .service-link:hover {
-            color: var(--sea-blue);
-        }
-        
-        .service-link i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-link:hover i {
-            transform: translateX(5px);
-        }
-        
-        /* About Section */
-        .about {
-            padding: 100px 0;
-            background-color: var(--light-gray);
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.03);
-        }
-        
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--deep-teal);
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: #4a4a4a;
-            line-height: 1.8;
-        }
-        
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--orange);
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 500;
-        }
-        
-        /* Work/Portfolio Section */
-        .work {
-            padding: 100px 0;
-            background-color: var(--white);
-        }
-        
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .work-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .work-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .work-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 4, 63, 0.9);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 2rem;
-            text-align: center;
-            color: white;
-        }
-        
-        .work-item:hover .work-overlay {
-            opacity: 1;
-        }
-        
-        .work-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .work-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .work-overlay p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1.5rem;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         
         /* Contact Section */
-        .contact {
+        .contact-section {
             padding: 100px 0;
-            background-color: var(--light-gray);
+            background: #f9fafb;
         }
         
         .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            align-items: center;
         }
         
-        .contact-info {
-            padding: 3rem;
-            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--sea-blue) 100%);
-            color: white;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: white;
+        .contact-info h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00043f;
+            margin-bottom: 20px;
         }
         
         .contact-info p {
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
         }
         
-        .contact-details {
-            margin-bottom: 2.5rem;
-        }
-        
-        .contact-item {
+        .contact-method {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
+            margin-bottom: 25px;
         }
         
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, var(--orange) 0%, var(--sea-blue) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
+            color: white;
+            font-size: 20px;
+            margin-right: 20px;
             flex-shrink: 0;
-            color: white;
-            font-size: 1.2rem;
         }
         
-        .contact-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-            color: white;
+        .contact-details h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #00043f;
+            margin-bottom: 5px;
         }
         
-        .contact-text a, .contact-text span {
-            color: rgba(255, 255, 255, 0.8);
+        .contact-details a, .contact-details p {
+            color: #666;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
+            font-size: 15px;
         }
         
-        .contact-text a:hover {
+        .contact-details a:hover {
             color: var(--orange);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--sea-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--deep-teal);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .footer-logo span {
+            color: var(--orange);
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-size: 15px;
         }
         
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 15px;
         }
         
         .social-link {
@@ -592,9 +581,8 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s;
         }
         
         .social-link:hover {
@@ -602,101 +590,16 @@
             transform: translateY(-3px);
         }
         
-        .contact-form {
-            padding: 3rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--dark-gray);
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--orange);
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .form-submit {
-            width: 100%;
-            padding: 15px;
-            background: var(--orange);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+        .footer-links h3 {
+            font-size: 20px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .form-submit:hover {
-            background: var(--sea-blue);
-            transform: translateY(-2px);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--deep-teal);
             color: white;
-            padding: 70px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        
-        .footer-logo span {
-            color: var(--orange);
-        }
-        
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .footer-links h3, .footer-newsletter h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: white;
+            margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
         }
         
-        .footer-links h3::after, .footer-newsletter h3::after {
+        .footer-links h3::after {
             content: '';
             position: absolute;
             left: 0;
@@ -711,38 +614,46 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color 0.3s ease, padding-left 0.3s ease;
-            display: block;
+            transition: all 0.3s;
+            font-size: 15px;
         }
         
         .footer-links a:hover {
             color: var(--orange);
-            padding-left: 8px;
+            padding-left: 5px;
         }
         
-        .footer-links a i {
-            margin-right: 8px;
-            color: var(--orange);
+        .footer-newsletter p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.8;
         }
         
         .newsletter-form {
             display: flex;
-            margin-bottom: 1.5rem;
+            gap: 10px;
         }
         
         .newsletter-form input {
             flex: 1;
             padding: 12px 15px;
-            border: none;
-            border-radius: 5px 0 0 5px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            color: white;
             font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
+            font-size: 14px;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
         
         .newsletter-form button {
@@ -750,300 +661,275 @@
             color: white;
             border: none;
             padding: 0 20px;
-            border-radius: 0 5px 5px 0;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 14px;
         }
         
         .newsletter-form button:hover {
-            background: var(--sea-blue);
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .footer-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        
-        .footer-social a:hover {
-            background: var(--orange);
-            transform: translateY(-3px);
+            background: #e65a1a;
+            transform: translateY(-2px);
         }
         
         .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            text-align: center;
             color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
+            font-size: 14px;
         }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--orange);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-            text-decoration: none;
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background: var(--sea-blue);
-            transform: translateY(-5px);
-        }
-        
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-fade-in {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
         
         /* Responsive Styles */
         @media (max-width: 1024px) {
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2.2rem; }
-            
-            .about-content {
+            .hero-container {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 50px;
+                text-align: center;
             }
             
-            .about-image {
+            .hero-bullets {
                 max-width: 600px;
-                margin: 0 auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-cta-group {
+                justify-content: center;
             }
             
             .contact-container {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             
             .contact-info {
-                order: 2;
+                text-align: center;
             }
             
-            .contact-form {
-                order: 1;
+            .contact-method {
+                justify-content: center;
+                text-align: left;
             }
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            h3 { font-size: 1.5rem; }
+            .header {
+                padding: 15px 0;
+            }
             
             .mobile-menu-btn {
                 display: block;
             }
             
-            nav ul {
+            .nav-links {
                 position: fixed;
                 top: 80px;
                 left: 0;
-                width: 100%;
+                right: 0;
                 background: white;
                 flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
+                padding: 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
                 transform: translateY(-150%);
-                transition: transform 0.3s ease;
-                z-index: 999;
+                transition: transform 0.3s ease-in-out;
             }
             
-            nav ul.active {
+            .nav-links.active {
                 transform: translateY(0);
             }
             
-            nav ul li {
-                margin: 0.8rem 0;
-            }
-            
             .hero {
-                padding: 150px 0 80px;
-                text-align: center;
+                padding: 120px 20px 80px;
             }
             
-            .hero h1 {
-                font-size: 2.2rem;
+            .hero-content h1 {
+                font-size: 36px;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .hero-subheadline {
+                font-size: 18px;
             }
             
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            .section-title {
+                font-size: 30px;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-stats {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                text-align: center;
             }
             
-            .back-to-top {
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            
-            .container {
-                padding: 0 15px;
+            .footer-links h3::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
             
-            .hero {
-                padding: 130px 0 60px;
+            .footer-about, .footer-links {
+                text-align: center;
             }
             
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .service-card, .work-item {
-                margin: 0 -15px;
-                width: calc(100% + 30px);
-                border-radius: 0;
-            }
-            
-            .contact-info, .contact-form {
-                padding: 2rem 1.5rem;
+            .social-links {
+                justify-content: center;
             }
             
             .newsletter-form {
                 flex-direction: column;
             }
             
-            .newsletter-form input {
-                border-radius: 5px;
-                margin-bottom: 10px;
-            }
-            
             .newsletter-form button {
-                border-radius: 5px;
                 padding: 12px;
             }
         }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container header-container">
+    <header class="header" id="header">
+        <div class="header-container">
             <a href="#" class="logo">Zinara<span>Digital</span></a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
-            
-            <nav>
-                <ul id="navLinks">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn btn-outline">Get Started</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
+        <div class="hero-container">
             <div class="hero-content">
-                <h1 class="animate-fade-in">Turn Clicks into Clients with <span style="color: var(--orange);">Zinara Digital</span></h1>
-                <p class="animate-fade-in delay-1">We help businesses in Nairobi and across Kenya attract more leads, convert visitors into customers, and maximize their digital marketing ROI.</p>
+                <h1 class="animate-fade-in">
+                    Turn Clicks into Clients with <span class="highlight">Zinara Digital's</span> Proven Marketing System
+                </h1>
+                <p class="hero-subheadline animate-fade-in delay-1">
+                    We help businesses in Nairobi and across Kenya attract more leads, convert visitors into customers, and maximize their digital marketing ROI.
+                </p>
                 
-                <div class="hero-buttons animate-fade-in delay-2">
-                    <a href="#contact" class="btn btn-primary">Get Your Free Audit</a>
+                <ul class="hero-bullets">
+                    <li class="animate-fade-in delay-1">Grow your business with data-driven marketing strategies</li>
+                    <li class="animate-fade-in delay-2">Get more qualified leads that convert into paying customers</li>
+                    <li class="animate-fade-in delay-3">See measurable results within 90 days or your money back</li>
+                </ul>
+                
+                <div class="hero-cta-group">
+                    <a href="#contact" class="btn btn-primary">Get Your Free Strategy Session</a>
                     <a href="#services" class="btn btn-outline">Our Services</a>
+                </div>
+                
+                <div class="trust-bar">
+                    <div class="trust-logos">
+                        <div class="trust-stat">
+                            <strong>98%</strong>
+                            <span>Client Retention</span>
+                        </div>
+                        <div class="trust-stat">
+                            <strong>3.2x</strong>
+                            <span>Average ROI</span>
+                        </div>
+                        <div class="trust-stat">
+                            <strong>50+</strong>
+                            <span>Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual animate-fade-in delay-2">
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">2-5x</div>
+                        <div class="stat-label">More Qualified Leads</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">90</div>
+                        <div class="stat-label">Days to Transform Your Business</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Dedicated Support</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services-section" id="services">
         <div class="container">
-            <div class="section-title">
-                <span>Our Services</span>
-                <h2>What We Do Best</h2>
-                <p>Comprehensive digital marketing solutions tailored to your business needs</p>
+            <div class="section-header">
+                <span class="section-subtitle">OUR SERVICES</span>
+                <h2 class="section-title">Digital Marketing Solutions That Deliver Results</h2>
+                <p class="section-description">
+                    We offer comprehensive digital marketing services tailored to your business needs, helping you reach your target audience and achieve your business goals.
+                </p>
             </div>
             
             <div class="services-grid">
@@ -1053,8 +939,8 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <h3>SEO & Content Marketing</h3>
-                    <p>Improve your search rankings and drive organic traffic with our data-driven SEO strategies and high-quality content creation.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Improve your search engine rankings and drive organic traffic with our comprehensive SEO strategies and high-quality content.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 
                 <!-- Service 2 -->
@@ -1063,212 +949,112 @@
                         <i class="fas fa-ad"></i>
                     </div>
                     <h3>Paid Advertising</h3>
-                    <p>Reach your target audience with precision through our strategic paid media campaigns on Google, Facebook, Instagram, and LinkedIn.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Reach your target audience with precision through Google Ads, Facebook Ads, and other PPC campaigns that deliver results.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 
                 <!-- Service 3 -->
                 <div class="service-card animate-fade-in delay-2">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-hashtag"></i>
                     </div>
-                    <h3>Web Design & Development</h3>
-                    <p>Convert more visitors into customers with our high-performance, mobile-responsive websites designed for maximum conversions.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <h3>Social Media Marketing</h3>
+                    <p>Build brand awareness, engage your audience, and drive conversions through strategic social media campaigns.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="service-card animate-fade-in delay-1">
+                <div class="service-card animate-fade-in">
                     <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Build brand awareness and engage your audience with our strategic social media management and advertising solutions.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <h3>Email Marketing</h3>
+                    <p>Nurture leads and retain customers with personalized email campaigns that drive engagement and sales.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="service-card animate-fade-in delay-2">
+                <div class="service-card animate-fade-in delay-1">
                     <div class="service-icon">
-                        <i class="fas fa-envelope-open-text"></i>
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Email Marketing</h3>
-                    <p>Nurture leads and boost customer loyalty with our targeted email marketing campaigns and automation workflows.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <h3>Web Design & Development</h3>
+                    <p>Create a stunning, responsive website that converts visitors into customers and supports your business growth.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
                 
                 <!-- Service 6 -->
-                <div class="service-card animate-fade-in delay-3">
+                <div class="service-card animate-fade-in delay-2">
                     <div class="service-icon">
-                        <i class="fas fa-funnel-dollar"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3>Conversion Rate Optimization</h3>
-                    <p>Turn more website visitors into customers with our data-driven CRO strategies and A/B testing methodologies.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Make data-driven decisions with comprehensive analytics and performance reports for all your marketing efforts.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image animate-fade-in">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team">
-                </div>
-                
-                <div class="about-text">
-                    <span class="section-subtitle">About Us</span>
-                    <h2>We're a Team of Passionate Digital Marketers</h2>
-                    <p>At Zinara Digital, we believe in the power of digital marketing to transform businesses. Founded in Nairobi, we've helped over 200 businesses across Kenya and East Africa achieve their growth objectives through data-driven strategies and innovative solutions.</p>
-                    <p>Our team of certified experts combines creativity with analytics to deliver measurable results that drive real business impact.</p>
-                    
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">200+</div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Client Retention</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Section -->
-    <section class="work" id="work">
-        <div class="container">
-            <div class="section-title">
-                <span>Our Work</span>
-                <h2>Recent Projects</h2>
-                <p>Explore some of our successful digital marketing campaigns and web development projects</p>
-            </div>
-            
-            <div class="work-grid">
-                <!-- Project 1 -->
-                <div class="work-item">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce Website">
-                    <div class="work-overlay">
-                        <h3>E-commerce Website Redesign</h3>
-                        <p>Increased conversion rate by 187% for an online fashion retailer through complete website redesign and CRO strategies.</p>
-                        <a href="#" class="btn btn-outline" style="color: white; border-color: white;">View Case Study</a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="work-item">
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d9e846d9b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="SEO Campaign">
-                    <div class="work-overlay">
-                        <h3>SEO & Content Strategy</h3>
-                        <p>Grew organic traffic by 320% for a B2B service provider through comprehensive SEO and content marketing.</p>
-                        <a href="#" class="btn btn-outline" style="color: white; border-color: white;">View Case Study</a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="work-item">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Social Media Campaign">
-                    <div class="work-overlay">
-                        <h3>Social Media Campaign</h3>
-                        <p>Generated 2,500+ leads in 30 days through targeted social media advertising and engagement strategies.</p>
-                        <a href="#" class="btn btn-outline" style="color: white; border-color: white;">View Case Study</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-8">
-                <a href="#" class="btn btn-outline">View All Projects</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact-section" id="contact">
         <div class="container">
-            <div class="section-title">
-                <span>Contact Us</span>
-                <h2>Get In Touch</h2>
-                <p>Have a project in mind or want to learn more about our services? We'd love to hear from you!</p>
-            </div>
-            
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>Fill out the form or reach out to us directly. We'll get back to you as soon as possible.</p>
+                    <h2>Ready to Grow Your Business?</h2>
+                    <p>Get in touch with our team of digital marketing experts. We'll help you develop a customized strategy to achieve your business goals and maximize your online presence.</p>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Our Office</h4>
-                                <span>Nairobi, Kenya</span>
-                            </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Call Us</h4>
-                                <a href="tel:+254704878872">+254 704 878 872</a>
-                            </div>
+                        <div class="contact-details">
+                            <h4>Our Location</h4>
+                            <p>Nairobi, Kenya</p>
                         </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email Us</h4>
-                                <a href="mailto:hello@zinara-digital.com">hello@zinara-digital.com</a>
-                            </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="far fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Working Hours</h4>
-                                <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
-                            </div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+254704878872">+254 704 878 872</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:hello@zinara-digital.com">hello@zinara-digital.com</a></p>
                         </div>
                     </div>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <p>Have questions? We're here to help! Send us a message and we'll respond within 24 hours.</p>
+                    <h3>Get Your Free Consultation</h3>
+                    <p class="text-gray-600 mb-6">Fill out the form below and we'll get back to you within 24 hours.</p>
                     
-                    <form id="contactForm" onsubmit="return submitForm(event)">
+                    <form id="contactForm" onsubmit="submitForm(event)">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
                         </div>
                         
                         <div class="form-group">
@@ -1281,21 +1067,20 @@
                             <select id="service" class="form-control">
                                 <option value="">Select a service</option>
                                 <option value="seo">SEO & Content Marketing</option>
-                                <option value="ppc">Paid Advertising (PPC)</option>
-                                <option value="web-design">Web Design & Development</option>
+                                <option value="ppc">Paid Advertising</option>
                                 <option value="social">Social Media Marketing</option>
                                 <option value="email">Email Marketing</option>
-                                <option value="cro">Conversion Rate Optimization</option>
-                                <option value="other">Other</option>
+                                <option value="web">Web Design & Development</option>
+                                <option value="analytics">Analytics & Reporting</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your project..." required></textarea>
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us about your project..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="form-submit">Send Message</button>
+                        <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1303,68 +1088,62 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="#" class="footer-logo">Zinara<span>Digital</span></a>
-                    <p>We help businesses in Nairobi and across Kenya grow their online presence, generate more leads, and increase revenue through data-driven digital marketing strategies.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#work"><i class="fas fa-chevron-right"></i> Our Work</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Our Services</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> SEO & Content Marketing</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Paid Advertising (PPC)</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Web Design & Development</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Social Media Marketing</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Email Marketing</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> CRO & Analytics</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest digital marketing tips, trends, and insights.</p>
-                    
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                    
-                    <p>We respect your privacy. Unsubscribe at any time.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <a href="#" class="footer-logo">Zinara<span>Digital</span></a>
+                <p>We help businesses in Nairobi and across Kenya grow their online presence, generate more leads, and increase revenue through data-driven digital marketing strategies.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2023 Zinara Digital. All Rights Reserved. | <a href="#" style="color: rgba(255,255,255,0.7);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.7);">Terms of Service</a></p>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#work">Our Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#">SEO & Content Marketing</a></li>
+                    <li><a href="#">Paid Advertising</a></li>
+                    <li><a href="#">Social Media Marketing</a></li>
+                    <li><a href="#">Email Marketing</a></li>
+                    <li><a href="#">Web Design & Development</a></li>
+                    <li><a href="#">Analytics & Reporting</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest digital marketing tips, trends, and special offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Zinara Digital. All Rights Reserved. | <a href="#" class="text-white hover:text-orange">Privacy Policy</a> | <a href="#" class="text-white hover:text-orange">Terms of Service</a></p>
+        </div>
     </footer>
-    
+
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop">
+    <a href="#" id="backToTop" class="fixed bottom-8 right-8 bg-orange text-white w-12 h-12 rounded-full flex items-center justify-center text-xl shadow-lg transition-all duration-300 opacity-0 invisible hover:bg-sea-blue">
         <i class="fas fa-arrow-up"></i>
     </a>
-    
+
     <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
@@ -1373,8 +1152,6 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
-            // Toggle between hamburger and close icon
             const icon = mobileMenuBtn.querySelector('i');
             if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -1386,15 +1163,35 @@
         });
         
         // Close mobile menu when clicking on a nav link
-        document.querySelectorAll('nav a').forEach(link => {
+        document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
+                if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                     const icon = mobileMenuBtn.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
             });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
         });
         
         // Smooth scrolling for anchor links
@@ -1415,15 +1212,13 @@
             });
         });
         
-        // Show/hide back to top button
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('active');
-            } else {
-                backToTopBtn.classList.remove('active');
-            }
+        // Back to top button
+        document.getElementById('backToTop').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
         
         // Form submission
@@ -1438,18 +1233,18 @@
             const message = document.getElementById('message').value;
             
             // Here you would typically send this data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been sent. We'll get back to you soon at ${email}.`);
+            console.log('Form submitted:', { name, email, phone, service, message });
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you within 24 hours.');
             
             // Reset form
             document.getElementById('contactForm').reset();
-            
-            return false;
         }
         
-        // Add animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate-fade-in, .service-card, .work-item');
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1460,7 +1255,7 @@
                     element.style.transform = 'translateY(0)';
                 }
             });
-        };
+        }
         
         // Initialize animations
         window.addEventListener('scroll', animateOnScroll);
